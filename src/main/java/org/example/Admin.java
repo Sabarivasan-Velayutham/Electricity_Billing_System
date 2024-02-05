@@ -1,11 +1,6 @@
 package org.example;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -87,6 +82,25 @@ public class Admin {
 
     // Properties: Logger
     public void logAction(String action) {
+        String fileName = "log.properties";
+
+        // Check if the file exists
+        File file = new File(fileName);
+
+        if (!file.exists()) {
+            try {
+                // Create the file if it doesn't exist
+                if (file.createNewFile()) {
+                    System.out.println("File created: " + fileName);
+                } else {
+                    System.out.println("Unable to create the file.");
+                }
+            } catch (IOException e) {
+                // Handle exception if unable to create the file
+                e.printStackTrace();
+            }
+        }
+
         Properties properties = new Properties();
         try (InputStream input = new FileInputStream("log.properties")) {
             properties.load(input);
