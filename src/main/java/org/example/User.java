@@ -2,19 +2,34 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
-
+class billHistory extends Exception{
+    public String getMessage()
+    {
+        return "Bill History is empty";
+    }
+}
 public class User {
     private List<BillHistory> billHistories;
 
     public User() {
-        this.billHistories = new ArrayList<>(10);
+        this.billHistories = new ArrayList<>();
     }
 
     public void viewBillHistory() {
         System.out.println("Viewing bill history for user.");
         System.out.println("Bill History for User:");
-        for (BillHistory history : billHistories) {
-            history.printBillHistory();
+        try{
+            if(billHistories.size()==0)
+            {
+                throw new billHistory();
+            }
+            for (BillHistory history : billHistories) {
+                history.printBillHistory();
+            }
+        }
+        catch(billHistory e)
+        {
+            System.out.print(e.getMessage());
         }
     }
 

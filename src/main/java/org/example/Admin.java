@@ -9,6 +9,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+class CustomerList extends Exception{
+    public String getMessage()
+    {
+        return "Customer List is Empty";
+    }
+}
+
 public class Admin {
     private List<ElectricityBill> customerList;
     private Logger logger;
@@ -51,13 +58,22 @@ public class Admin {
 
         // Print statement
         System.out.println("Viewing customer list:");
+        try{
+            if(customerList.size()==0)
+            {
+                throw new CustomerList();
+            }
+            for (ElectricityBill customer : customerList) {
+                // Logger statement
+                logger.info("Customer: " + customer.getCustomerName() + ", ID: " + customer.getCustomerId());
 
-        for (ElectricityBill customer : customerList) {
-            // Logger statement
-            logger.info("Customer: " + customer.getCustomerName() + ", ID: " + customer.getCustomerId());
-
-            // Print statement
-            System.out.println("Customer: " + customer.getCustomerName() + ", ID: " + customer.getCustomerId());
+                // Print statement
+                System.out.println("Customer: " + customer.getCustomerName() + ", ID: " + customer.getCustomerId());
+            }
+        }
+        catch(CustomerList e)
+        {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -129,21 +145,28 @@ public class Admin {
 
         // Print statement
         System.out.println("Customers who missed payments:");
+        try{
+            if(customerList.size()==0)
+            {
+                throw new CustomerList();
+            }
+            for (ElectricityBill customer : customerList) {
+                if (customer instanceof ElectricityBill.OnlineElectricityBill) {
+                    ElectricityBill.OnlineElectricityBill onlineCustomer = (ElectricityBill.OnlineElectricityBill) customer;
 
-        for (ElectricityBill customer : customerList) {
-            if (customer instanceof ElectricityBill.OnlineElectricityBill) {
-                ElectricityBill.OnlineElectricityBill onlineCustomer = (ElectricityBill.OnlineElectricityBill) customer;
+                    if (!onlineCustomer.hasPaid()) {
+                        // Logger statement
+                        logger.info("Customer: " + onlineCustomer.getCustomerName() + ", ID: " + onlineCustomer.getCustomerId());
 
-                if (!onlineCustomer.hasPaid()) {
-                    // Logger statement
-                    logger.info("Customer: " + onlineCustomer.getCustomerName() + ", ID: "
-                            + onlineCustomer.getCustomerId());
-
-                    // Print statement
-                    System.out.println("Customer: " + onlineCustomer.getCustomerName() + ", ID: "
-                            + onlineCustomer.getCustomerId());
+                        // Print statement
+                        System.out.println("Customer: " + onlineCustomer.getCustomerName() + ", ID: " + onlineCustomer.getCustomerId());
+                    }
                 }
             }
+        }
+        catch(CustomerList e)
+        {
+            System.out.println(e.getMessage());
         }
     }
 }
