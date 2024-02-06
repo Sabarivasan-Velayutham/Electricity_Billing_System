@@ -15,12 +15,6 @@ public abstract class ElectricityBill implements Serializable {
         this.billAmount = DEFAULT_BILL_AMOUNT;
     }
 
-    public ElectricityBill(String customerName, String customerId, double initialBillAmount) {
-        this.customerName = customerName;
-        this.customerId = customerId;
-        this.billAmount = initialBillAmount;
-    }
-
     public synchronized void calculateBill() {
         // Business logic to calculate electricity bill
         // For simplicity, let's assume a fixed bill amount

@@ -77,16 +77,19 @@ public class Admin {
         }
     }
 
-    // IO Package (File): Save customer list to a file
     public void saveCustomerListToFile() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("customerList.dat"))) {
-            oos.writeObject(customerList);
+        String fileName = "customerList.txt";
+
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+            for (ElectricityBill customer : customerList) {
+                writer.println("Customer: " + customer.getCustomerName() + ", ID: " + customer.getCustomerId());
+            }
 
             // Logger statement
-            logger.info("Customer list saved to file.");
+            logger.info("Customer list saved to file: " + fileName);
 
             // Print statement
-            System.out.println("Customer list saved to file.");
+            System.out.println("Customer list saved to file: " + fileName);
         } catch (IOException e) {
             // Logger statement
             logger.log(Level.SEVERE, "Error saving customer list to file", e);
