@@ -109,9 +109,9 @@ public class Main {
     }
 
     private static void handleUserActions(UserManager userManager) {
-        userManager.createUser("user1", "user1password");
-        userManager.createUser("user2", "user2password");
-        userManager.createUser("user3", "user3password");
+        userManager.createUser("user1","user1password");
+        userManager.createUser("user2","user2password");
+        userManager.createUser("user3","user3password");
         printMessage("Enter user username (user1, user2, or user3): ");
         String username = scanner.nextLine();
         printMessage("Enter user password: ");
@@ -125,10 +125,9 @@ public class Main {
                 printMessage("2. Pay Electricity Bill");
                 printMessage("3. Generate Bill");
                 printMessage("4. Exit");
-
                 printMessage("Enter your choice: ");
                 int userChoice = scanner.nextInt();
-                scanner.nextLine(); // Consume the newline character
+                scanner.nextLine();
 
                 switch (userChoice) {
                     case 1:
@@ -142,7 +141,7 @@ public class Main {
                         break;
                     case 4:
                         printMessage("Exiting User Menu.");
-                        return;
+                        return ;
                     default:
                         printWarning("Invalid choice. Please try again.");
                 }
@@ -157,8 +156,8 @@ public class Main {
         String billNumber = scanner.nextLine();
         printMessage("Enter payment method (UPI, DEBIT, CREDIT, etc.): ");
         String paymentMethod = scanner.nextLine();
-
-        user.payElectricityBill(billNumber, paymentMethod);
+        Payment payment=new Payment();
+        payment.payElectricityBill(billNumber, paymentMethod,user);
     }
 
     private static void handleUserGenerateBill(User user) {

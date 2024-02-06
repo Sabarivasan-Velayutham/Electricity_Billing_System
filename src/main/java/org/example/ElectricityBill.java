@@ -25,7 +25,7 @@ public abstract class ElectricityBill implements Serializable {
         // Business logic to calculate electricity bill
         // For simplicity, let's assume a fixed bill amount
         this.billAmount = DEFAULT_BILL_AMOUNT;
-        System.out.print("Calculated bill for customer:" + customerName + " ID: " + customerId);
+        System.out.print("Calculated bill for customer:"+customerName+" ID: "+customerId);
     }
 
     public double getBillAmount() {
@@ -37,25 +37,25 @@ public abstract class ElectricityBill implements Serializable {
     static class OnlineElectricityBill extends ElectricityBill {
         private String paymentMethod;
         private boolean paid;
-
         public OnlineElectricityBill(String customerName, String customerId, String paymentMethod) {
             super(customerName, customerId);
             this.paymentMethod = paymentMethod;
-            this.paid = false;
+            this.paid=false;
         }
 
         @Override
         public void printBillDetails() {
-            System.out.print("Bill Amount:" + getBillAmount());
-            System.out.print("Payment Method:" + paymentMethod);
+            System.out.print("Bill Amount:"+getBillAmount());
+            System.out.print("Payment Method:"+paymentMethod);
         }
 
-        public boolean hasPaid() {
+        public boolean hasPaid()
+        {
             return this.paid;
         }
-
-        public void setPaid(boolean paid) {
-            this.paid = paid;
+        public void setPaid(boolean paid)
+        {
+            this.paid=paid;
         }
     }
 

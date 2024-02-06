@@ -1,5 +1,4 @@
 package org.example;
-
 class BillSystem {
     private static BillSystem instance;
 

@@ -2,7 +2,8 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
-class billHistory extends Exception{
+
+class BillHistoryList extends Exception{
     public String getMessage()
     {
         return "Bill History is empty";
@@ -15,43 +16,26 @@ public class User {
         this.billHistories = new ArrayList<>();
     }
 
+    public List<BillHistory> getBillHistory()
+    {
+        return this.billHistories;
+    }
+
     public void viewBillHistory() {
         System.out.println("Viewing bill history for user.");
         System.out.println("Bill History for User:");
         try{
             if(billHistories.size()==0)
             {
-                throw new billHistory();
+                throw new BillHistoryList();
             }
             for (BillHistory history : billHistories) {
                 history.printBillHistory();
             }
         }
-        catch(billHistory e)
+        catch(BillHistoryList e)
         {
             System.out.print(e.getMessage());
-        }
-    }
-
-    public void payElectricityBill(String billNumber, String paymentMethod) {
-        try {
-            int index = Integer.parseInt(billNumber) - 1;
-            if (index >= 0 && index < billHistories.size()) {
-                BillHistory billToPay = billHistories.get(index);
-                System.out.println("Paid " + billToPay.getPaidAmount() + " using " + paymentMethod +
-                        " for bill " + billNumber + ".");
-
-                // Perform any additional payment-related actions if needed
-
-                // Remove the bill from the list after payment
-                billHistories.remove(index);
-            } else {
-                System.out.println("Invalid bill number entered: " + billNumber);
-                System.out.println("Invalid bill number. Please try again.");
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid input for bill number. Please enter a number." + e);
-            System.out.println("Invalid input for bill number. Please enter a number.");
         }
     }
 
