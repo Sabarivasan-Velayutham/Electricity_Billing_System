@@ -1,12 +1,6 @@
 package org.example;
 
 import java.util.*;
-//class PaymentBillHistoryList extends Exception{
-//    public String getMessage()
-//    {
-//        return "Bill History is empty";
-//    }
-//}
 
 public class Payment {
     public void payElectricityBill(String billNumber, String paymentMethod,User user) {
