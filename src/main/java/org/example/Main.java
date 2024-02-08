@@ -1,5 +1,4 @@
 package org.example;
-
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
@@ -28,71 +27,74 @@ public class Main {
         UserManager userManager = new UserManager();
         userManager.createUser("admin", "adminpassword");
 
-        printMessage("1. Admin");
-        printMessage("2. User");
-        printMessage("Enter your choice (1 or 2): ");
-        int choice = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
-        switch (choice) {
-            case 1:
-                handleAdminActions(userManager);
-                break;
-            case 2:
-                handleUserActions(userManager);
-                break;
-            default:
-                printWarning("Invalid choice. Exiting program.");
-        }
+        String choice;
+        do {
+            printMessage("1. Admin");
+            printMessage("2. User");
+            printMessage("3. Exit");
+            printMessage("Enter your choice (1, 2, or 3): ");
+            choice = scanner.next();
+            scanner.nextLine(); // Consume the newline character
+
+            switch (choice) {
+                case "1":
+                    handleAdminActions(userManager);
+                    break;
+                case "2":
+                    handleUserActions(userManager);
+                    break;
+                case "3":
+                    printMessage("Exiting program.");
+                    break;
+                default:
+                    printWarning("Invalid choice. Please try again.");
+            }
+        } while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3"));
     }
 
     private static void handleAdminActions(UserManager userManager) {
-        String adminUsername,adminPassword;
-        System.out.print("Enter the admin username:");
-        adminUsername=scanner.nextLine();
-        System.out.print("Enter the admin password:");
-        adminPassword=scanner.nextLine();
-        if (userManager.authenticateUser(adminUsername, adminPassword)) {
-            Admin admin = new Admin();
-            while (true) {
-                printMessage("\nAdmin Menu:");
-                printMessage("1. Add Customer and Calculate Bill");
-                printMessage("2. View Customer List and Bills");
-                printMessage("3. View Customers Who Missed Payments");
-                printMessage("4. Save Customer List to File");
-                printMessage("5. Log Action");
-                printMessage("6. Exit");
+        Admin admin = new Admin();
+        String adminChoice;
+        String adminUsername, adminPassword;
+        do {
+            printMessage("\nAdmin Menu:");
+            printMessage("1. Add Customer and Calculate Bill");
+            printMessage("2. View Customer List and Bills");
+            printMessage("3. View Customers Who Missed Payments");
+            printMessage("4. Save Customer List to File");
+            printMessage("5. Log Action");
+            printMessage("6. Exit");
 
-                printMessage("Enter your choice: ");
-                int adminChoice = scanner.nextInt();
-                scanner.nextLine(); // Consume the newline character
-                switch (adminChoice) {
-                    case 1:
-                        handleAdminAddCustomer(admin);
-                        break;
-                    case 2:
-                        admin.viewCustomerList();
-                        break;
-                    case 3:
-                        admin.viewMissedPayments();
-                        break;
-                    case 4:
-                        admin.saveCustomerListToFile();
-                        break;
-                    case 5:
-                        printMessage("Enter action to log: ");
-                        String action = scanner.nextLine();
-                        admin.logAction(action);
-                        break;
-                    case 6:
-                        printMessage("Exiting Admin Menu.");
-                        return ;
-                    default:
-                        printWarning("Invalid choice. Please try again.");
-                }
+            printMessage("Enter your choice: ");
+            adminChoice = scanner.next();
+            scanner.nextLine(); // Consume the newline character
+
+            switch (adminChoice) {
+                case "1":
+                    handleAdminAddCustomer(admin);
+                    break;
+                case "2":
+                    admin.viewCustomerList();
+                    break;
+                case "3":
+                    admin.viewMissedPayments();
+                    break;
+                case "4":
+                    admin.saveCustomerListToFile();
+                    break;
+                case "5":
+                    printMessage("Enter action to log: ");
+                    String action = scanner.nextLine();
+                    admin.logAction(action);
+                    break;
+                case "6":
+                    printMessage("Exiting Admin Menu.");
+                    break;
+                default:
+                    printWarning("Invalid choice. Please try again.");
             }
-        } else {
-            printWarning("Authentication failed. Exiting program.");
-        }
+        } while (!adminChoice.equals("1") && !adminChoice.equals("2") && !adminChoice.equals("3")
+            && !adminChoice.equals("4") && !adminChoice.equals("5") && !adminChoice.equals("6"));
     }
 
     private static void handleAdminAddCustomer(Admin admin) {
@@ -109,46 +111,36 @@ public class Main {
     }
 
     private static void handleUserActions(UserManager userManager) {
-        userManager.createUser("user1","user1password");
-        userManager.createUser("user2","user2password");
-        userManager.createUser("user3","user3password");
-        printMessage("Enter user username (user1, user2, or user3): ");
-        String username = scanner.nextLine();
-        printMessage("Enter user password: ");
-        String password = scanner.nextLine();
+        User user = new User();
+        String userChoice;
+        do {
+            printMessage("\nUser Menu:");
+            printMessage("1. View Bill History");
+            printMessage("2. Pay Electricity Bill");
+            printMessage("3. Generate Bill");
+            printMessage("4. Exit");
+            printMessage("Enter your choice: ");
+            userChoice = scanner.next();
+            scanner.nextLine(); // Consume the newline character
 
-        if (userManager.authenticateUser(username, password)) {
-            User user = new User();
-            while (true) {
-                printMessage("\nUser Menu:");
-                printMessage("1. View Bill History");
-                printMessage("2. Pay Electricity Bill");
-                printMessage("3. Generate Bill");
-                printMessage("4. Exit");
-                printMessage("Enter your choice: ");
-                int userChoice = scanner.nextInt();
-                scanner.nextLine();
-
-                switch (userChoice) {
-                    case 1:
-                        user.viewBillHistory();
-                        break;
-                    case 2:
-                        handleUserPayBill(user);
-                        break;
-                    case 3:
-                        handleUserGenerateBill(user);
-                        break;
-                    case 4:
-                        printMessage("Exiting User Menu.");
-                        return ;
-                    default:
-                        printWarning("Invalid choice. Please try again.");
-                }
+            switch (userChoice) {
+                case "1":
+                    user.viewBillHistory();
+                    break;
+                case "2":
+                    handleUserPayBill(user);
+                    break;
+                case "3":
+                    handleUserGenerateBill(user);
+                    break;
+                case "4":
+                    printMessage("Exiting User Menu.");
+                    break;
+                default:
+                    printWarning("Invalid choice. Please try again.");
             }
-        } else {
-            printWarning("Authentication failed. Exiting program.");
-        }
+        }while (!userChoice.equals("1") && !userChoice.equals("2") && !userChoice.equals("3")
+                && !userChoice.equals("4"));
     }
 
     private static void handleUserPayBill(User user) {
@@ -156,8 +148,8 @@ public class Main {
         String billNumber = scanner.nextLine();
         printMessage("Enter payment method (UPI, DEBIT, CREDIT, etc.): ");
         String paymentMethod = scanner.nextLine();
-        Payment payment=new Payment();
-        payment.payElectricityBill(billNumber, paymentMethod,user);
+        Payment payment = new Payment();
+        payment.payElectricityBill(billNumber, paymentMethod, user);
     }
 
     private static void handleUserGenerateBill(User user) {
