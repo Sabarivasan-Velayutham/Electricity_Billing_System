@@ -1,6 +1,6 @@
-package org.example.services;
+package com.tneb.electricitybillsystem.services;
 
-import org.example.BillHistory;
+import com.tneb.electricitybillsystem.BillHistory;
 
 import java.util.List;
 

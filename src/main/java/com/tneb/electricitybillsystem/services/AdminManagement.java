@@ -1,6 +1,6 @@
-package org.example.services;
+package com.tneb.electricitybillsystem.services;
 
-import org.example.ElectricityBill;
+import com.tneb.electricitybillsystem.ElectricityBill;
 
 import java.io.IOException;
 

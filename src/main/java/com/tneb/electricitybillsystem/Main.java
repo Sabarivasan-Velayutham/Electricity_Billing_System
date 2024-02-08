@@ -1,4 +1,4 @@
-package org.example;
+package com.tneb.electricitybillsystem;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.FileHandler;

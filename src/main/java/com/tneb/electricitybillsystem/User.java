@@ -1,6 +1,6 @@
-package org.example;
+package com.tneb.electricitybillsystem;
 
-import org.example.services.UserManagement;
+import com.tneb.electricitybillsystem.services.UserManagement;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
