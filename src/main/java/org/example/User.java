@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.services.UserManagement;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,7 @@ class BillHistoryList extends Exception{
         return "Bill History is empty";
     }
 }
-public class User {
+public class User implements UserManagement {
     private List<BillHistory> billHistories;
 
     public User() {

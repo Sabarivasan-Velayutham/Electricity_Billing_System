@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.services.AdminManagement;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,7 @@ class CustomerList extends Exception{
     }
 }
 
-public class Admin {
+public class Admin implements AdminManagement {
     private List<ElectricityBill> customerList;
     private Logger logger;
 
