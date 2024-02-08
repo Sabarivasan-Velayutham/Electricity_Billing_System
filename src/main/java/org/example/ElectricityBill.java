@@ -19,7 +19,7 @@ public abstract class ElectricityBill implements Serializable {
         // Business logic to calculate electricity bill
         // For simplicity, let's assume a fixed bill amount
         this.billAmount = DEFAULT_BILL_AMOUNT;
-        System.out.print("Calculated bill for customer:"+customerName+" ID: "+customerId);
+        System.out.print("Calculated bill for customer:"+customerName+" ID: "+customerId+"\n");
     }
 
     public double getBillAmount() {
@@ -39,8 +39,8 @@ public abstract class ElectricityBill implements Serializable {
 
         @Override
         public void printBillDetails() {
-            System.out.print("Bill Amount:"+getBillAmount());
-            System.out.print("Payment Method:"+paymentMethod);
+            System.out.print("Bill Amount:"+getBillAmount()+"\n");
+            System.out.print("Payment Method:"+paymentMethod+"\n");
         }
 
         public boolean hasPaid()
