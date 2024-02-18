@@ -1,0 +1,1076 @@
+2024-02-12 13:46:16 INFO  AdminCLIManager:41 - Admin panel started.
+2024-02-12 13:46:30 INFO  UserServiceImpl:41 - User created successfully with ID: shree
+2024-02-12 13:46:30 INFO  UserServiceImpl:55 - User data written to file: userdata.txt
+2024-02-12 13:46:30 INFO  AdminCLIManager:169 - User added successfully with name: shree
+2024-02-12 13:46:37 INFO  BillingServiceImpl:40 - Bill added successfully for user ID: shree
+2024-02-12 13:46:37 INFO  AdminCLIManager:204 - Bill added successfully for user with ID: shree
+2024-02-12 13:46:46 INFO  AdminCLIManager:147 - Admin logged out.
+2024-02-12 13:46:48 INFO  AdminCLIManager:49 - Admin panel exited.
+2024-02-12 13:46:51 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 13:46:56 INFO  UserCLIManager:88 - User login successful for user ID: shree
+2024-02-12 13:46:59 INFO  UserCLIManager:158 - Displayed bill history for user ID: shree
+2024-02-12 13:47:09 INFO  BillingServiceImpl:67 - Bill paid successfully: Bill{billId='863b804c-56db-4d2b-bd92-fdfe71661f4e', userId='shree', amount=32424.0, paid=true}
+2024-02-12 13:47:09 INFO  UserCLIManager:174 - Bill paid successfully for user ID: shree with Bill ID: 863b804c-56db-4d2b-bd92-fdfe71661f4e
+2024-02-12 13:47:12 INFO  UserCLIManager:158 - Displayed bill history for user ID: shree
+2024-02-12 13:47:38 INFO  UserCLIManager:116 - User logged out.
+2024-02-12 13:47:55 WARN  UserCLIManager:93 - User login failed for user ID: 2
+2024-02-12 13:48:03 INFO  UserServiceImpl:41 - User created successfully with ID: hari
+2024-02-12 13:48:03 INFO  UserServiceImpl:55 - User data written to file: userdata.txt
+2024-02-12 13:48:03 INFO  UserCLIManager:106 - User created successfully with name: hari
+2024-02-12 13:48:08 INFO  UserCLIManager:88 - User login successful for user ID: hari
+2024-02-12 13:48:21 INFO  BillingServiceImpl:30 - Bill generated successfully for user ID: hari
+2024-02-12 13:48:21 INFO  UserCLIManager:186 - Bill generated successfully for user ID: hari with amount: 5127.0
+2024-02-12 13:48:25 INFO  UserCLIManager:158 - Displayed bill history for user ID: hari
+2024-02-12 13:48:38 INFO  BillingServiceImpl:67 - Bill paid successfully: Bill{billId='bb5df7aa-25e9-4d0f-8269-b04ff25aa78c', userId='hari', amount=5127.0, paid=true}
+2024-02-12 13:48:38 INFO  UserCLIManager:174 - Bill paid successfully for user ID: hari with Bill ID: bb5df7aa-25e9-4d0f-8269-b04ff25aa78c
+2024-02-12 13:48:43 INFO  UserCLIManager:116 - User logged out.
+2024-02-12 14:57:43 INFO  AdminCLIManager:41 - Admin panel started.
+2024-02-12 14:58:09 INFO  UserServiceImpl:41 - User created successfully with ID: shree
+2024-02-12 14:58:09 INFO  UserServiceImpl:55 - User data written to file: userdata.txt
+2024-02-12 14:58:09 INFO  AdminCLIManager:169 - User added successfully with name: shree
+2024-02-12 14:58:17 INFO  UserServiceImpl:41 - User created successfully with ID: hari
+2024-02-12 14:58:17 INFO  UserServiceImpl:55 - User data written to file: userdata.txt
+2024-02-12 14:58:17 INFO  AdminCLIManager:169 - User added successfully with name: hari
+2024-02-12 14:58:31 INFO  AdminCLIManager:147 - Admin logged out.
+2024-02-12 14:58:33 INFO  AdminCLIManager:49 - Admin panel exited.
+2024-02-12 14:58:35 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 14:58:42 INFO  UserCLIManager:89 - User login successful for user ID: shree
+2024-02-12 14:58:56 INFO  UserCLIManager:159 - Displayed bill history for user ID: shree
+2024-02-12 14:59:06 INFO  BillingServiceImpl:30 - Bill generated successfully for user ID: shree
+2024-02-12 14:59:06 INFO  UserCLIManager:187 - Bill generated successfully for user ID: shree with amount: 239.0
+2024-02-12 14:59:28 ERROR UserCLIManager:178 - Failed to pay bill for user ID: shree with Bill ID: de
+com.electricity.Exceptions.BillingException: Bill not found
+	at com.electricity.service.BillingServiceImpl.payBill(BillingServiceImpl.java:76)
+	at com.electricity.Controller.UserCLIManager.payBill(UserCLIManager.java:173)
+	at com.electricity.Controller.UserCLIManager.handleUserMenuChoice(UserCLIManager.java:140)
+	at com.electricity.Controller.UserCLIManager.userMenu(UserCLIManager.java:114)
+	at com.electricity.Controller.UserCLIManager.userLogin(UserCLIManager.java:91)
+	at com.electricity.Controller.UserCLIManager.handleUserChoice(UserCLIManager.java:68)
+	at com.electricity.Controller.UserCLIManager.start(UserCLIManager.java:39)
+	at com.electricity.Controller.ElectricityBillingSystem.run(ElectricityBillingSystem.java:44)
+	at com.electricity.Rest.Main.main(Main.java:8)
+2024-02-12 14:59:30 INFO  UserCLIManager:159 - Displayed bill history for user ID: shree
+2024-02-12 14:59:41 INFO  BillingServiceImpl:67 - Bill paid successfully: Bill{billId='1ffaa057-1b31-46e0-9fa6-d4859458b586', userId='shree', amount=239.0, paid=true}
+2024-02-12 14:59:41 INFO  UserCLIManager:175 - Bill paid successfully for user ID: shree with Bill ID: 1ffaa057-1b31-46e0-9fa6-d4859458b586
+2024-02-12 14:59:50 INFO  UserCLIManager:117 - User logged out.
+2024-02-12 14:59:58 INFO  UserCLIManager:74 - User exited.
+2024-02-12 14:59:58 INFO  UserCLIManager:46 - 🔌 User exited 🔌.
+2024-02-12 15:23:07 INFO  AdminCLIManager:41 - Admin panel started.
+2024-02-12 15:23:12 WARN  AdminCLIManager:92 - Admin login failed for admin ID: 0
+2024-02-12 15:23:32 INFO  UserServiceImpl:41 - User created successfully with ID: null
+2024-02-12 15:23:32 INFO  UserServiceImpl:55 - User data written to file: userdata.txt
+2024-02-12 15:23:32 INFO  AdminCLIManager:166 - User added successfully with name: null
+2024-02-12 15:24:11 INFO  UserServiceImpl:41 - User created successfully with ID: null
+2024-02-12 15:24:11 INFO  UserServiceImpl:55 - User data written to file: userdata.txt
+2024-02-12 15:24:11 INFO  AdminCLIManager:166 - User added successfully with name: null
+2024-02-12 16:36:30 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 16:36:48 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-12 16:36:48 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 16:36:48 INFO  AdminCLIManager:165 - User added successfully with name: shree
+2024-02-12 16:36:57 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-12 16:36:59 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-12 16:38:53 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 16:39:13 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-12 16:39:13 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 16:39:13 INFO  AdminCLIManager:165 - User added successfully with name: shree
+2024-02-12 16:39:22 INFO  UserServiceImpl:40 - User created successfully with ID: hari
+2024-02-12 16:39:22 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 16:39:22 INFO  AdminCLIManager:165 - User added successfully with name: hari
+2024-02-12 16:39:36 INFO  BillingServiceImpl:40 - Bill added successfully for user ID: shree
+2024-02-12 16:39:36 INFO  AdminCLIManager:200 - Bill added successfully for user with ID: shree
+2024-02-12 16:39:47 INFO  BillingServiceImpl:40 - Bill added successfully for user ID: hari
+2024-02-12 16:39:47 INFO  AdminCLIManager:200 - Bill added successfully for user with ID: hari
+2024-02-12 16:40:14 INFO  UserServiceImpl:122 - User details updated successfully for user ID: shree
+2024-02-12 16:40:14 INFO  AdminCLIManager:266 - User details updated successfully for user ID: shree
+2024-02-12 16:40:49 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-12 16:40:50 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-12 16:40:52 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 16:40:59 INFO  UserCLIManager:89 - User login successful for user ID: hari
+2024-02-12 16:41:03 INFO  UserCLIManager:159 - Displayed bill history for user ID: hari
+2024-02-12 16:41:18 INFO  BillingServiceImpl:67 - Bill paid successfully: Bill{billId='870201ae-f897-425d-85f4-2a2a72899ab5', userId='hari', amount=2091.0, paid=true}
+2024-02-12 16:41:18 INFO  UserCLIManager:175 - Bill paid successfully for user ID: hari with Bill ID: 870201ae-f897-425d-85f4-2a2a72899ab5
+2024-02-12 16:41:22 INFO  UserCLIManager:159 - Displayed bill history for user ID: hari
+2024-02-12 16:44:00 INFO  UserCLIManager:117 - User logged out.
+2024-02-12 16:44:07 INFO  UserCLIManager:74 - User exited.
+2024-02-12 16:44:07 INFO  UserCLIManager:46 - User exited
+2024-02-12 17:36:38 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 17:37:39 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-12 17:37:39 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 17:37:39 INFO  AdminCLIManager:165 - User added successfully with name: shree
+2024-02-12 17:45:26 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 17:46:00 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-12 17:46:00 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 17:46:00 INFO  AdminCLIManager:165 - User added successfully with name: shree
+2024-02-12 17:46:07 INFO  UserServiceImpl:40 - User created successfully with ID: hari
+2024-02-12 17:46:07 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 17:46:07 INFO  AdminCLIManager:165 - User added successfully with name: hari
+2024-02-12 17:46:30 INFO  BillingServiceImpl:40 - Bill added successfully for user ID: shree
+2024-02-12 17:46:30 INFO  AdminCLIManager:200 - Bill added successfully for user with ID: shree
+2024-02-12 17:46:39 INFO  BillingServiceImpl:40 - Bill added successfully for user ID: hari
+2024-02-12 17:46:39 INFO  AdminCLIManager:200 - Bill added successfully for user with ID: hari
+2024-02-12 17:46:52 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-12 17:46:58 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-12 17:47:20 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 17:47:26 INFO  UserCLIManager:89 - User login successful for user ID: shree
+2024-02-12 17:47:29 INFO  UserCLIManager:159 - Displayed bill history for user ID: shree
+2024-02-12 17:47:43 INFO  BillingServiceImpl:67 - Bill paid successfully: Bill{billId='a512aa37-779b-4f88-9755-19146d60ab5b', userId='shree', amount=8233.0, paid=true}
+2024-02-12 17:47:43 INFO  UserCLIManager:175 - Bill paid successfully for user ID: shree with Bill ID: a512aa37-779b-4f88-9755-19146d60ab5b
+2024-02-12 17:48:05 INFO  UserCLIManager:193 - Displayed unpaid bills for user ID: shree
+2024-02-12 17:48:08 INFO  UserCLIManager:159 - Displayed bill history for user ID: shree
+2024-02-12 17:48:38 INFO  UserCLIManager:117 - User logged out.
+2024-02-12 17:48:43 INFO  UserCLIManager:74 - User exited.
+2024-02-12 17:48:43 INFO  UserCLIManager:46 - User exited
+2024-02-12 17:53:19 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 17:54:20 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 17:56:22 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 17:56:46 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-12 17:56:46 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 17:56:46 INFO  AdminCLIManager:165 - User added successfully with name: shree
+2024-02-12 17:56:55 INFO  UserServiceImpl:40 - User created successfully with ID: hari
+2024-02-12 17:56:55 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 17:56:55 INFO  AdminCLIManager:165 - User added successfully with name: hari
+2024-02-12 17:57:42 INFO  UserServiceImpl:109 - User deleted successfully with ID: shree
+2024-02-12 17:57:42 INFO  AdminCLIManager:225 - User deleted successfully with ID: shree
+2024-02-12 17:57:54 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-12 17:57:57 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-12 17:57:59 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 18:01:54 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 18:03:26 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-12 18:03:26 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 18:03:26 INFO  AdminCLIManager:165 - User added successfully with name: shree
+2024-02-12 18:03:58 INFO  UserServiceImpl:40 - User created successfully with ID: lakshmi
+2024-02-12 18:03:58 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 18:03:58 INFO  AdminCLIManager:165 - User added successfully with name: lakshmi
+2024-02-12 18:05:32 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-12 18:05:36 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-12 18:29:29 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 23:03:11 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 23:03:24 INFO  UserServiceImpl:40 - User created successfully with ID: s
+2024-02-12 23:03:24 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 23:03:24 INFO  AdminCLIManager:165 - User added successfully with name: s
+2024-02-12 23:03:31 INFO  UserServiceImpl:40 - User created successfully with ID: d
+2024-02-12 23:03:31 INFO  UserServiceImpl:53 - User data written to file: userdata.txt
+2024-02-12 23:03:31 INFO  AdminCLIManager:165 - User added successfully with name: d
+2024-02-12 23:03:41 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-12 23:03:42 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-12 23:07:50 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 23:08:02 INFO  UserServiceImpl:40 - User created successfully with ID: s
+2024-02-12 23:08:02 INFO  UserServiceImpl:53 - User data appended to file: userdata.txt
+2024-02-12 23:08:02 INFO  AdminCLIManager:165 - User added successfully with name: s
+2024-02-12 23:08:06 INFO  UserServiceImpl:40 - User created successfully with ID: d
+2024-02-12 23:08:06 INFO  UserServiceImpl:53 - User data appended to file: userdata.txt
+2024-02-12 23:08:06 INFO  AdminCLIManager:165 - User added successfully with name: d
+2024-02-12 23:15:23 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 23:15:34 INFO  UserServiceImpl:40 - User created successfully with ID: s
+2024-02-12 23:15:34 INFO  UserServiceImpl:53 - User data appended to file: userdata.txt
+2024-02-12 23:15:34 INFO  AdminCLIManager:165 - User added successfully with name: s
+2024-02-12 23:15:43 INFO  UserServiceImpl:40 - User created successfully with ID: e
+2024-02-12 23:15:43 INFO  UserServiceImpl:53 - User data appended to file: userdata.txt
+2024-02-12 23:15:43 INFO  AdminCLIManager:165 - User added successfully with name: e
+2024-02-12 23:15:50 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: s
+2024-02-12 23:15:50 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-12 23:15:50 INFO  AdminCLIManager:200 - Bill added successfully for user with ID: s
+2024-02-12 23:15:56 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: e
+2024-02-12 23:15:56 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-12 23:15:56 INFO  AdminCLIManager:200 - Bill added successfully for user with ID: e
+2024-02-12 23:15:58 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-12 23:16:06 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-12 23:16:34 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 23:16:38 INFO  UserCLIManager:89 - User login successful for user ID: s
+2024-02-12 23:16:40 INFO  UserCLIManager:159 - Displayed bill history for user ID: s
+2024-02-12 23:17:03 INFO  BillingServiceImpl:84 - Bill paid successfully: Bill{billId='12d8ed7e-2953-49c4-afb7-d07198f076c8', userId='s', amount=34.0, paid=true}
+2024-02-12 23:17:03 INFO  BillingServiceImpl:112 - Bill data updated in file: billdata.txt
+2024-02-12 23:17:03 INFO  UserCLIManager:175 - Bill paid successfully for user ID: s with Bill ID: 12d8ed7e-2953-49c4-afb7-d07198f076c8
+2024-02-12 23:17:06 INFO  UserCLIManager:159 - Displayed bill history for user ID: s
+2024-02-12 23:17:08 INFO  UserCLIManager:193 - Displayed unpaid bills for user ID: s
+2024-02-12 23:17:09 INFO  UserCLIManager:117 - User logged out.
+2024-02-12 23:17:11 INFO  UserCLIManager:74 - User exited.
+2024-02-12 23:17:11 INFO  UserCLIManager:46 - User exited
+2024-02-12 23:17:14 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 23:17:16 INFO  UserCLIManager:74 - User exited.
+2024-02-12 23:17:16 INFO  UserCLIManager:46 - User exited
+2024-02-12 23:17:17 INFO  UserCLIManager:34 - User panel started.
+2024-02-12 23:17:19 INFO  UserCLIManager:74 - User exited.
+2024-02-12 23:17:19 INFO  UserCLIManager:46 - User exited
+2024-02-12 23:30:20 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-12 23:30:54 INFO  UserServiceImpl:49 - User created successfully with ID: s
+2024-02-12 23:30:54 INFO  UserServiceImpl:133 - User data appended to file: userdata2.txt
+2024-02-12 23:30:54 INFO  AdminCLIManager:168 - User added successfully with name: s
+2024-02-12 23:30:59 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-12 23:31:00 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 00:00:38 ERROR AdminServiceImpl:105 - Error serializing object to file: com.electricity.Model.Admin
+2024-02-13 00:00:43 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:00:49 ERROR AdminServiceImpl:116 - Error deserializing object from file: writing aborted; java.io.NotSerializableException: com.electricity.Model.Admin
+2024-02-13 00:01:08 ERROR AdminServiceImpl:105 - Error serializing object to file: com.electricity.Model.Admin
+2024-02-13 00:01:14 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:01:19 ERROR AdminServiceImpl:116 - Error deserializing object from file: writing aborted; java.io.NotSerializableException: com.electricity.Model.Admin
+2024-02-13 00:01:42 ERROR AdminServiceImpl:105 - Error serializing object to file: com.electricity.Model.Admin
+2024-02-13 00:18:35 ERROR AdminServiceImpl:105 - Error serializing object to file: com.electricity.Model.Admin
+2024-02-13 00:18:41 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:19:03 ERROR AdminServiceImpl:116 - Error deserializing object from file: writing aborted; java.io.NotSerializableException: com.electricity.Model.Admin
+2024-02-13 00:22:28 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 00:22:38 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:22:44 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 00:23:10 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 00:23:41 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 00:23:49 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:24:04 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 00:25:36 INFO  AdminServiceImpl:104 - Object serialized to file: object.sar
+2024-02-13 00:25:40 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:25:45 INFO  AdminServiceImpl:114 - Object deserialized from file: object.sar
+2024-02-13 00:25:49 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-13 00:25:54 INFO  AdminServiceImpl:114 - Object deserialized from file: object.sar
+2024-02-13 00:25:56 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-13 00:34:35 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 00:34:52 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:34:59 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 00:35:14 INFO  UserServiceImpl:49 - User created successfully with ID: s
+2024-02-13 00:35:14 INFO  UserServiceImpl:133 - User data appended to file: userData.txt
+2024-02-13 00:35:14 INFO  AdminCLIManager:168 - User added successfully with name: s
+2024-02-13 00:35:25 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: s
+2024-02-13 00:35:25 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 00:35:25 INFO  AdminCLIManager:203 - Bill added successfully for user with ID: s
+2024-02-13 00:35:28 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-13 00:35:30 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 00:36:04 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 00:36:07 INFO  UserCLIManager:90 - User login successful for user ID: s
+2024-02-13 00:36:09 INFO  UserCLIManager:160 - Displayed bill history for user ID: s
+2024-02-13 00:36:13 INFO  UserCLIManager:201 - Displayed unpaid bills for user ID: s
+2024-02-13 00:36:31 ERROR UserCLIManager:185 - Failed to pay bill for user ID: s with Bill ID: 2df6869-94ae-4a8c-b3ba-e992d047f844
+com.electricity.Exceptions.BillingException: Bill not found
+	at com.electricity.service.BillingServiceImpl.payBill(BillingServiceImpl.java:98)
+	at com.electricity.Controller.UserCLIManager.payBill(UserCLIManager.java:178)
+	at com.electricity.Controller.UserCLIManager.handleUserMenuChoice(UserCLIManager.java:141)
+	at com.electricity.Controller.UserCLIManager.userMenu(UserCLIManager.java:115)
+	at com.electricity.Controller.UserCLIManager.userLogin(UserCLIManager.java:92)
+	at com.electricity.Controller.UserCLIManager.handleUserChoice(UserCLIManager.java:69)
+	at com.electricity.Controller.UserCLIManager.start(UserCLIManager.java:40)
+	at com.electricity.Controller.ElectricityBillingSystem.run(ElectricityBillingSystem.java:45)
+	at com.electricity.Rest.Main.main(Main.java:8)
+2024-02-13 00:36:53 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='02df6869-94ae-4a8c-b3ba-e992d047f844', userId='s', amount=23.0, paid=true}
+2024-02-13 00:36:53 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 00:36:53 INFO  UserCLIManager:180 - Bill paid successfully for user ID: s with Bill ID: 02df6869-94ae-4a8c-b3ba-e992d047f844 and Payment Method: UPI
+2024-02-13 00:36:55 INFO  UserCLIManager:160 - Displayed bill history for user ID: s
+2024-02-13 00:36:57 INFO  UserCLIManager:201 - Displayed unpaid bills for user ID: s
+2024-02-13 00:40:33 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 00:40:37 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:40:44 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 00:40:48 INFO  UserServiceImpl:49 - User created successfully with ID: s
+2024-02-13 00:40:48 ERROR UserServiceImpl:135 - Error appending user data to file:  (No such file or directory)
+2024-02-13 00:40:48 INFO  AdminCLIManager:169 - User added successfully with name: s
+2024-02-13 00:40:59 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-13 00:41:01 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 00:44:15 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 00:44:17 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 00:44:22 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 00:44:32 INFO  UserServiceImpl:49 - User created successfully with ID: s
+2024-02-13 00:44:32 INFO  UserServiceImpl:133 - User data appended to file: userData.txt
+2024-02-13 00:44:32 INFO  AdminCLIManager:168 - User added successfully with name: s
+2024-02-13 00:44:38 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: s
+2024-02-13 00:44:38 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 00:44:38 INFO  AdminCLIManager:203 - Bill added successfully for user with ID: s
+2024-02-13 00:44:39 INFO  AdminCLIManager:146 - Admin logged out.
+2024-02-13 00:44:41 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 00:44:52 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 00:44:57 INFO  UserCLIManager:90 - User login successful for user ID: s
+2024-02-13 00:44:59 INFO  UserCLIManager:203 - Displayed unpaid bills for user ID: s
+2024-02-13 00:45:16 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='35e5b9b2-e9fa-454b-9767-8bd2d69207e7', userId='s', amount=34.0, paid=true}
+2024-02-13 00:45:16 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 00:45:16 INFO  UserCLIManager:182 - Bill paid successfully for user ID: s with Bill ID: 35e5b9b2-e9fa-454b-9767-8bd2d69207e7 and Payment Method: UPI
+2024-02-13 00:45:19 INFO  UserCLIManager:160 - Displayed bill history for user ID: s
+2024-02-13 00:45:22 INFO  UserCLIManager:203 - Displayed unpaid bills for user ID: s
+2024-02-13 00:45:23 INFO  UserCLIManager:118 - User logged out.
+2024-02-13 00:45:25 INFO  UserCLIManager:75 - User exited.
+2024-02-13 00:45:25 INFO  UserCLIManager:47 - User exited
+2024-02-13 10:16:17 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:18:33 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:19:18 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:19:32 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 10:26:14 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:26:18 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 10:26:28 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 10:32:55 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:33:11 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 10:36:31 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:36:37 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 10:37:43 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:38:00 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 10:43:09 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:43:12 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 10:43:14 ERROR AdminCLIManager:87 - Input mismatch exception: null
+2024-02-13 10:43:16 ERROR AdminCLIManager:87 - Input mismatch exception: null
+2024-02-13 10:43:18 ERROR AdminCLIManager:87 - Input mismatch exception: null
+2024-02-13 10:43:31 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 10:53:15 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 10:53:20 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 10:53:22 ERROR AdminCLIManager:69 - Input mismatch exception: null
+2024-02-13 10:53:31 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 10:53:35 ERROR AdminCLIManager:96 - Error in handling admin choice: For input string: "ds"
+2024-02-13 11:04:47 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 11:04:52 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 11:04:54 ERROR AdminCLIManager:69 - Input mismatch exception: null
+2024-02-13 11:05:03 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 11:05:09 WARN  AdminCLIManager:173 - Invalid choice selected in admin menu: 98
+2024-02-13 11:05:13 ERROR AdminCLIManager:96 - Error in handling admin choice: For input string: "sw"
+2024-02-13 11:05:23 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 11:05:42 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 11:05:42 INFO  UserServiceImpl:133 - User data appended to file: userDetails.txt
+2024-02-13 11:05:42 INFO  AdminCLIManager:190 - User added successfully with name: shree
+2024-02-13 11:06:01 INFO  UserServiceImpl:49 - User created successfully with ID: hari
+2024-02-13 11:06:01 INFO  UserServiceImpl:133 - User data appended to file: userDetails.txt
+2024-02-13 11:06:01 INFO  AdminCLIManager:190 - User added successfully with name: hari
+2024-02-13 11:06:17 INFO  UserServiceImpl:49 - User created successfully with ID: siva
+2024-02-13 11:06:17 INFO  UserServiceImpl:133 - User data appended to file: userDetails.txt
+2024-02-13 11:06:17 INFO  AdminCLIManager:190 - User added successfully with name: siva
+2024-02-13 11:06:41 INFO  UserServiceImpl:49 - User created successfully with ID: lakshmi
+2024-02-13 11:06:41 INFO  UserServiceImpl:133 - User data appended to file: userDetails.txt
+2024-02-13 11:06:41 INFO  AdminCLIManager:190 - User added successfully with name: lakshmi
+2024-02-13 11:07:05 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: shree
+2024-02-13 11:07:05 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 11:07:05 INFO  AdminCLIManager:225 - Bill added successfully for user with ID: shree
+2024-02-13 11:07:12 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: hari
+2024-02-13 11:07:12 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 11:07:12 INFO  AdminCLIManager:225 - Bill added successfully for user with ID: hari
+2024-02-13 11:07:22 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: siva
+2024-02-13 11:07:22 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 11:07:22 INFO  AdminCLIManager:225 - Bill added successfully for user with ID: siva
+2024-02-13 11:07:31 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: lakshmi
+2024-02-13 11:07:31 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 11:07:31 INFO  AdminCLIManager:225 - Bill added successfully for user with ID: lakshmi
+2024-02-13 11:07:48 ERROR AdminCLIManager:96 - Error in handling admin choice: For input string: "dv"
+2024-02-13 11:07:55 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 11:08:21 INFO  AdminCLIManager:168 - Admin logged out.
+2024-02-13 11:08:23 ERROR AdminCLIManager:69 - Input mismatch exception: null
+2024-02-13 11:08:26 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 11:08:31 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 11:15:02 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 11:15:06 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 11:15:08 ERROR UserCLIManager:69 - Input mismatch exception: null
+2024-02-13 11:15:17 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 11:15:17 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 11:15:17 INFO  UserCLIManager:125 - User created successfully with name: shree
+2024-02-13 11:15:22 ERROR UserCLIManager:69 - Input mismatch exception: null
+2024-02-13 11:15:28 INFO  UserCLIManager:110 - User login successful for user ID: shree
+2024-02-13 11:15:30 ERROR UserCLIManager:101 - Error in handling admin choice: For input string: "cxe"
+2024-02-13 11:15:35 ERROR UserCLIManager:69 - Input mismatch exception: null
+2024-02-13 11:16:57 INFO  UserCLIManager:110 - User login successful for user ID: shree
+2024-02-13 11:17:24 ERROR UserCLIManager:101 - Error in handling admin choice: For input string: "ref"
+2024-02-13 11:17:29 INFO  UserCLIManager:110 - User login successful for user ID: shree
+2024-02-13 11:21:43 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 11:21:46 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 11:21:58 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 11:21:58 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 11:21:58 INFO  UserCLIManager:124 - User created successfully with name: shree
+2024-02-13 11:22:05 INFO  UserCLIManager:109 - User login successful for user ID: shree
+2024-02-13 11:22:12 ERROR UserCLIManager:226 - Invalid input for bill amount: null
+2024-02-13 11:39:49 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 11:40:33 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 11:40:43 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 11:41:02 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 11:41:11 ERROR AdminCLIManager:69 - Input mismatch exception: null
+2024-02-13 11:41:29 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 11:42:08 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 11:42:08 INFO  UserServiceImpl:133 - User data appended to file: f.txt
+2024-02-13 11:42:08 INFO  AdminCLIManager:182 - User added successfully with name: shree
+2024-02-13 11:42:33 INFO  UserServiceImpl:49 - User created successfully with ID: hari
+2024-02-13 11:42:33 INFO  UserServiceImpl:133 - User data appended to file: f.txt
+2024-02-13 11:42:33 INFO  AdminCLIManager:182 - User added successfully with name: hari
+2024-02-13 11:42:47 INFO  UserServiceImpl:49 - User created successfully with ID: geetha
+2024-02-13 11:42:47 INFO  UserServiceImpl:133 - User data appended to file: f.text
+2024-02-13 11:42:47 INFO  AdminCLIManager:182 - User added successfully with name: geetha
+2024-02-13 11:47:45 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 11:48:14 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 11:48:24 INFO  UserServiceImpl:40 - User created successfully with ID: shre
+2024-02-13 11:48:24 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 11:48:24 INFO  UserCLIManager:122 - User created successfully with name: shre
+2024-02-13 11:48:29 INFO  UserCLIManager:107 - User login successful for user ID: shre
+2024-02-13 11:54:06 INFO  UserCLIManager:164 - User logged out.
+2024-02-13 11:54:06 INFO  UserCLIManager:132 - User logged out.
+2024-02-13 11:54:07 INFO  UserCLIManager:84 - User exited.
+2024-02-13 11:54:07 INFO  UserCLIManager:47 - User exited
+2024-02-13 11:59:00 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 11:59:02 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 11:59:11 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 11:59:11 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 11:59:11 INFO  UserCLIManager:122 - User created successfully with name: shree
+2024-02-13 11:59:44 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 11:59:53 INFO  UserCLIManager:221 - Displayed unpaid bills for user ID: shree
+2024-02-13 12:02:56 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 12:03:05 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:04:24 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 12:04:45 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 12:04:48 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:07:18 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 12:07:22 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:07:40 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 12:07:40 WARN  AdminCLIManager:107 - Admin login failed for admin ID: password1
+2024-02-13 12:07:50 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 12:11:37 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 12:11:40 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:11:49 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 12:13:10 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: shree
+2024-02-13 12:13:10 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 12:13:10 INFO  AdminCLIManager:217 - Bill added successfully for user with ID: shree
+2024-02-13 12:14:26 INFO  UserServiceImpl:49 - User created successfully with ID: hari
+2024-02-13 12:14:26 INFO  UserServiceImpl:133 - User data appended to file: user.txt
+2024-02-13 12:14:26 INFO  AdminCLIManager:181 - User added successfully with name: hari
+2024-02-13 12:14:49 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 12:14:49 INFO  UserServiceImpl:133 - User data appended to file: ded
+2024-02-13 12:14:50 INFO  AdminCLIManager:181 - User added successfully with name: shree
+2024-02-13 12:14:53 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 12:15:01 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 12:15:31 INFO  AdminServiceImpl:103 - Object serialized to file: object.sar
+2024-02-13 12:15:39 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:15:54 INFO  AdminServiceImpl:113 - Object deserialized from file: object.sar
+2024-02-13 12:23:01 INFO  AdminServiceImpl:103 - Object serialized to file: object.txt
+2024-02-13 12:23:06 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:23:15 INFO  AdminServiceImpl:113 - Object deserialized from file: object.txt
+2024-02-13 12:23:31 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 12:23:31 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 12:23:31 INFO  AdminCLIManager:181 - User added successfully with name: shree
+2024-02-13 12:23:33 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 12:23:36 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 12:28:58 INFO  AdminServiceImpl:103 - Object serialized to file: object.txt
+2024-02-13 12:29:02 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:29:09 INFO  AdminServiceImpl:113 - Object deserialized from file: object.txt
+2024-02-13 12:29:30 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 12:29:30 INFO  UserServiceImpl:133 - User data appended to file: j.txt
+2024-02-13 12:29:30 INFO  AdminCLIManager:181 - User added successfully with name: shree
+2024-02-13 12:29:33 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 12:29:34 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 12:33:46 INFO  AdminServiceImpl:96 - Object serialized to file: object.txt
+2024-02-13 12:33:48 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:33:55 INFO  AdminServiceImpl:106 - Object deserialized from file: object.txt
+2024-02-13 12:34:07 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 12:34:07 INFO  UserServiceImpl:133 - User data appended to file: user.txt
+2024-02-13 12:34:07 INFO  AdminCLIManager:181 - User added successfully with name: shree
+2024-02-13 12:34:10 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 12:34:11 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 12:37:58 INFO  AdminServiceImpl:94 - Object serialized to file: object.txt
+2024-02-13 12:38:02 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 12:38:09 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 12:38:09 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 12:38:09 INFO  UserCLIManager:122 - User created successfully with name: shree
+2024-02-13 12:38:15 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 12:53:48 INFO  AdminServiceImpl:94 - Object serialized to file: object.txt
+2024-02-13 12:53:59 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:54:06 INFO  AdminServiceImpl:104 - Object deserialized from file: object.txt
+2024-02-13 12:54:27 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 12:54:27 INFO  UserServiceImpl:133 - User data appended to file: user.txt
+2024-02-13 12:54:27 INFO  AdminCLIManager:181 - User added successfully with name: shree
+2024-02-13 12:54:43 INFO  UserServiceImpl:49 - User created successfully with ID: hari
+2024-02-13 12:54:43 INFO  UserServiceImpl:133 - User data appended to file: user.txt
+2024-02-13 12:54:43 INFO  AdminCLIManager:181 - User added successfully with name: hari
+2024-02-13 12:55:10 INFO  UserServiceImpl:49 - User created successfully with ID: lakshmi
+2024-02-13 12:55:10 INFO  UserServiceImpl:133 - User data appended to file: user.txt
+2024-02-13 12:55:10 INFO  AdminCLIManager:181 - User added successfully with name: lakshmi
+2024-02-13 12:55:26 INFO  UserServiceImpl:49 - User created successfully with ID: siva
+2024-02-13 12:55:26 INFO  UserServiceImpl:133 - User data appended to file: user.txt
+2024-02-13 12:55:26 INFO  AdminCLIManager:181 - User added successfully with name: siva
+2024-02-13 12:55:33 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 12:55:36 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 12:55:38 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 12:55:45 INFO  UserCLIManager:84 - User exited.
+2024-02-13 12:55:45 INFO  UserCLIManager:47 - User exited
+2024-02-13 12:55:47 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 12:55:55 INFO  AdminServiceImpl:104 - Object deserialized from file: object.txt
+2024-02-13 12:56:08 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: shre
+2024-02-13 12:56:08 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 12:56:08 INFO  AdminCLIManager:217 - Bill added successfully for user with ID: shre
+2024-02-13 12:56:21 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: shree
+2024-02-13 12:56:21 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 12:56:21 INFO  AdminCLIManager:217 - Bill added successfully for user with ID: shree
+2024-02-13 12:56:29 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: hari
+2024-02-13 12:56:29 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 12:56:29 INFO  AdminCLIManager:217 - Bill added successfully for user with ID: hari
+2024-02-13 12:56:37 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: siva
+2024-02-13 12:56:37 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 12:56:37 INFO  AdminCLIManager:217 - Bill added successfully for user with ID: siva
+2024-02-13 12:56:49 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: lakshmi
+2024-02-13 12:56:49 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 12:56:49 INFO  AdminCLIManager:217 - Bill added successfully for user with ID: lakshmi
+2024-02-13 12:57:15 INFO  UserServiceImpl:118 - User details updated successfully for user ID: lakshmi
+2024-02-13 12:57:15 INFO  AdminCLIManager:283 - User details updated successfully for user ID: lakshmi
+2024-02-13 12:57:18 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 12:57:21 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 12:57:23 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 12:57:30 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 12:57:36 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 12:57:57 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='02aa1b36-3e29-4d93-89f8-2d25ccaaf415', userId='shree', amount=89122.0, paid=true}
+2024-02-13 12:57:57 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 12:57:57 INFO  UserCLIManager:195 - Bill paid successfully for user ID: shree with Bill ID: 02aa1b36-3e29-4d93-89f8-2d25ccaaf415 and Payment Method: UPI
+2024-02-13 12:58:12 INFO  UserCLIManager:221 - Displayed unpaid bills for user ID: shree
+2024-02-13 12:58:19 INFO  UserCLIManager:132 - User logged out.
+2024-02-13 12:58:29 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 12:58:30 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 12:58:39 INFO  UserCLIManager:132 - User logged out.
+2024-02-13 12:58:46 INFO  UserCLIManager:107 - User login successful for user ID: hari
+2024-02-13 12:58:49 INFO  UserCLIManager:221 - Displayed unpaid bills for user ID: hari
+2024-02-13 12:58:54 INFO  UserCLIManager:173 - Displayed bill history for user ID: hari
+2024-02-13 12:59:28 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='0cdd7e73-f7dd-4721-aa7d-d54c638d7a37', userId='hari', amount=8319.0, paid=true}
+2024-02-13 12:59:28 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 12:59:28 INFO  UserCLIManager:195 - Bill paid successfully for user ID: hari with Bill ID: 0cdd7e73-f7dd-4721-aa7d-d54c638d7a37 and Payment Method: DEBIT_CARD
+2024-02-13 12:59:53 INFO  UserCLIManager:132 - User logged out.
+2024-02-13 12:59:57 INFO  UserCLIManager:84 - User exited.
+2024-02-13 12:59:57 INFO  UserCLIManager:47 - User exited
+2024-02-13 13:02:21 INFO  AdminServiceImpl:94 - Object serialized to file: object.txt
+2024-02-13 13:02:46 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 13:02:53 INFO  AdminServiceImpl:104 - Object deserialized from file: object.txt
+2024-02-13 13:07:29 INFO  AdminServiceImpl:94 - Object serialized to file: object.txt
+2024-02-13 13:07:31 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 13:07:38 INFO  AdminServiceImpl:104 - Object deserialized from file: object.txt
+2024-02-13 13:08:04 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 13:08:04 INFO  UserServiceImpl:133 - User data appended to file: y.txt
+2024-02-13 13:08:04 INFO  AdminCLIManager:181 - User added successfully with name: shree
+2024-02-13 13:08:13 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 13:08:47 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 13:27:17 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 13:27:24 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 13:27:33 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 13:27:58 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 13:27:58 INFO  UserServiceImpl:133 - User data appended to file: ud.txt
+2024-02-13 13:27:58 INFO  AdminCLIManager:179 - User added successfully with name: shree
+2024-02-13 13:28:10 INFO  UserServiceImpl:49 - User created successfully with ID: hari
+2024-02-13 13:28:10 INFO  UserServiceImpl:133 - User data appended to file: ud.txt
+2024-02-13 13:28:10 INFO  AdminCLIManager:179 - User added successfully with name: hari
+2024-02-13 13:28:41 INFO  UserServiceImpl:49 - User created successfully with ID: lakshmi
+2024-02-13 13:28:41 INFO  UserServiceImpl:133 - User data appended to file: ud.txt
+2024-02-13 13:28:41 INFO  AdminCLIManager:179 - User added successfully with name: lakshmi
+2024-02-13 13:28:55 INFO  UserServiceImpl:49 - User created successfully with ID: siva
+2024-02-13 13:28:55 INFO  UserServiceImpl:133 - User data appended to file: ud.txt
+2024-02-13 13:28:55 INFO  AdminCLIManager:179 - User added successfully with name: siva
+2024-02-13 13:29:19 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: shree
+2024-02-13 13:29:19 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:29:19 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: shree
+2024-02-13 13:29:26 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: hari
+2024-02-13 13:29:26 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:29:26 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: hari
+2024-02-13 13:29:33 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: lakshmi
+2024-02-13 13:29:33 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:29:33 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: lakshmi
+2024-02-13 13:29:41 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: siva
+2024-02-13 13:29:41 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:29:41 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: siva
+2024-02-13 13:30:01 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 13:30:07 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 13:30:07 WARN  AdminCLIManager:107 - Admin login failed for admin ID: cdcd
+2024-02-13 13:30:09 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 13:30:14 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 13:30:25 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 13:30:27 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 13:30:47 ERROR UserCLIManager:200 - Failed to pay bill for user ID: shree with Bill ID: ebf79ba2-8e4f-42bf-808a-8a4da6aadbcd', userId='shree', amount=331.0, paid=false
+com.electricity.Exceptions.BillingException: Bill not found
+	at com.electricity.service.BillingServiceImpl.payBill(BillingServiceImpl.java:98)
+	at com.electricity.Controller.UserCLIManager.payBill(UserCLIManager.java:193)
+	at com.electricity.Controller.UserCLIManager.handleUserMenuChoice(UserCLIManager.java:154)
+	at com.electricity.Controller.UserCLIManager.userMenu(UserCLIManager.java:129)
+	at com.electricity.Controller.UserCLIManager.userLogin(UserCLIManager.java:109)
+	at com.electricity.Controller.UserCLIManager.handleUserChoice(UserCLIManager.java:78)
+	at com.electricity.Controller.UserCLIManager.start(UserCLIManager.java:40)
+	at com.electricity.Controller.ElectricityBillingSystem.run(ElectricityBillingSystem.java:42)
+	at com.electricity.Rest.Main.main(Main.java:8)
+2024-02-13 13:31:03 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='ebf79ba2-8e4f-42bf-808a-8a4da6aadbcd', userId='shree', amount=331.0, paid=true}
+2024-02-13 13:31:03 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 13:31:03 INFO  UserCLIManager:195 - Bill paid successfully for user ID: shree with Bill ID: ebf79ba2-8e4f-42bf-808a-8a4da6aadbcd and Payment Method: UPI
+2024-02-13 13:31:26 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 13:31:30 INFO  UserCLIManager:132 - User logged out.
+2024-02-13 13:31:42 INFO  UserCLIManager:107 - User login successful for user ID: lakshmi
+2024-02-13 13:31:49 INFO  UserCLIManager:221 - Displayed unpaid bills for user ID: lakshmi
+2024-02-13 13:32:05 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='65e75748-93fa-44f9-b28c-97730faaf2eb', userId='lakshmi', amount=643747.0, paid=true}
+2024-02-13 13:32:05 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 13:32:05 INFO  UserCLIManager:195 - Bill paid successfully for user ID: lakshmi with Bill ID: 65e75748-93fa-44f9-b28c-97730faaf2eb and Payment Method: UPI
+2024-02-13 13:32:11 INFO  UserCLIManager:132 - User logged out.
+2024-02-13 13:32:12 INFO  UserCLIManager:84 - User exited.
+2024-02-13 13:32:12 INFO  UserCLIManager:47 - User exited
+2024-02-13 13:40:51 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 13:40:57 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 13:41:06 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 13:41:30 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 13:41:30 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:41:30 INFO  AdminCLIManager:179 - User added successfully with name: shree
+2024-02-13 13:41:44 INFO  UserServiceImpl:49 - User created successfully with ID: hari
+2024-02-13 13:41:44 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:41:44 INFO  AdminCLIManager:179 - User added successfully with name: hari
+2024-02-13 13:41:59 INFO  UserServiceImpl:49 - User created successfully with ID: lakshmi
+2024-02-13 13:41:59 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:41:59 INFO  AdminCLIManager:179 - User added successfully with name: lakshmi
+2024-02-13 13:42:13 INFO  UserServiceImpl:49 - User created successfully with ID: siva
+2024-02-13 13:42:13 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:42:13 INFO  AdminCLIManager:179 - User added successfully with name: siva
+2024-02-13 13:42:35 INFO  UserServiceImpl:49 - User created successfully with ID: alagar
+2024-02-13 13:42:35 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:42:35 INFO  AdminCLIManager:179 - User added successfully with name: alagar
+2024-02-13 13:42:47 INFO  UserServiceImpl:49 - User created successfully with ID: ayyam
+2024-02-13 13:42:47 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:42:47 INFO  AdminCLIManager:179 - User added successfully with name: ayyam
+2024-02-13 13:43:03 INFO  UserServiceImpl:49 - User created successfully with ID: keerthi
+2024-02-13 13:43:03 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:43:03 INFO  AdminCLIManager:179 - User added successfully with name: keerthi
+2024-02-13 13:43:20 INFO  UserServiceImpl:49 - User created successfully with ID: sanju
+2024-02-13 13:43:20 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:43:20 INFO  AdminCLIManager:179 - User added successfully with name: sanju
+2024-02-13 13:43:37 INFO  UserServiceImpl:49 - User created successfully with ID: manisha
+2024-02-13 13:43:37 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:43:37 INFO  AdminCLIManager:179 - User added successfully with name: manisha
+2024-02-13 13:43:54 INFO  UserServiceImpl:49 - User created successfully with ID: govind
+2024-02-13 13:43:54 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:43:54 INFO  AdminCLIManager:179 - User added successfully with name: govind
+2024-02-13 13:44:16 INFO  UserServiceImpl:118 - User details updated successfully for user ID: manisha
+2024-02-13 13:44:16 INFO  AdminCLIManager:282 - User details updated successfully for user ID: manisha
+2024-02-13 13:44:33 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: manishu
+2024-02-13 13:44:33 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:44:33 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: manishu
+2024-02-13 13:44:42 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: govind
+2024-02-13 13:44:42 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:44:42 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: govind
+2024-02-13 13:44:53 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: hari
+2024-02-13 13:44:53 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:44:53 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: hari
+2024-02-13 13:44:59 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: ayyam
+2024-02-13 13:44:59 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:44:59 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: ayyam
+2024-02-13 13:45:19 INFO  UserServiceImpl:49 - User created successfully with ID: siva
+2024-02-13 13:45:19 INFO  UserServiceImpl:133 - User data appended to file: t.txt
+2024-02-13 13:45:19 INFO  AdminCLIManager:179 - User added successfully with name: siva
+2024-02-13 13:45:26 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: siva
+2024-02-13 13:45:26 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 13:45:26 INFO  AdminCLIManager:215 - Bill added successfully for user with ID: siva
+2024-02-13 13:45:29 INFO  AdminCLIManager:159 - Admin logged out.
+2024-02-13 13:45:32 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 13:45:34 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 13:45:36 ERROR UserCLIManager:67 - Input mismatch exception: null
+2024-02-13 13:45:44 INFO  UserCLIManager:107 - User login successful for user ID: ayyam
+2024-02-13 13:45:47 INFO  UserCLIManager:173 - Displayed bill history for user ID: ayyam
+2024-02-13 13:45:59 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='71a07100-ea6e-4fd0-88a5-bf57cc377de4', userId='ayyam', amount=219083.0, paid=true}
+2024-02-13 13:45:59 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 13:45:59 INFO  UserCLIManager:195 - Bill paid successfully for user ID: ayyam with Bill ID: 71a07100-ea6e-4fd0-88a5-bf57cc377de4 and Payment Method: UPI
+2024-02-13 13:46:14 INFO  UserCLIManager:173 - Displayed bill history for user ID: ayyam
+2024-02-13 13:46:18 INFO  UserCLIManager:132 - User logged out.
+2024-02-13 13:46:19 INFO  UserCLIManager:84 - User exited.
+2024-02-13 13:46:19 INFO  UserCLIManager:47 - User exited
+2024-02-13 14:54:01 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 14:54:04 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 14:54:54 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 14:54:58 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 14:55:12 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 14:55:54 ERROR AdminCLIManager:92 - Error in handling admin choice: For input string: "dssf"
+2024-02-13 15:13:37 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 15:13:39 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 15:13:49 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 15:13:49 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 15:13:49 INFO  UserCLIManager:122 - User created successfully with name: shree
+2024-02-13 15:13:54 WARN  UserCLIManager:112 - User login failed for user ID: shre
+2024-02-13 15:13:59 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 15:14:06 INFO  BillingServiceImpl:33 - Bill generated successfully for user ID: shree
+2024-02-13 15:14:06 INFO  UserCLIManager:208 - Bill generated successfully for user ID: shree with amount: 83294.0
+2024-02-13 15:14:26 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 15:14:50 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 15:15:04 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='8470aeff-3001-470e-aaf7-465187f05089', userId='shree', amount=83294.0, paid=true}
+2024-02-13 15:15:04 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 15:15:04 INFO  UserCLIManager:193 - Bill paid successfully for user ID: shree with Bill ID: 8470aeff-3001-470e-aaf7-465187f05089 and Payment Method: UPI
+2024-02-13 15:15:08 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 15:15:14 INFO  BillingServiceImpl:33 - Bill generated successfully for user ID: shree
+2024-02-13 15:15:14 INFO  UserCLIManager:208 - Bill generated successfully for user ID: shree with amount: 0.0
+2024-02-13 15:15:23 ERROR UserCLIManager:198 - Failed to pay bill for user ID: shree with Bill ID: crcd
+com.electricity.Exceptions.BillingException: Bill not found
+	at com.electricity.service.BillingServiceImpl.payBill(BillingServiceImpl.java:98)
+	at com.electricity.Controller.UserCLIManager.payBill(UserCLIManager.java:191)
+	at com.electricity.Controller.UserCLIManager.handleUserMenuChoice(UserCLIManager.java:154)
+	at com.electricity.Controller.UserCLIManager.userMenu(UserCLIManager.java:129)
+	at com.electricity.Controller.UserCLIManager.userLogin(UserCLIManager.java:109)
+	at com.electricity.Controller.UserCLIManager.handleUserChoice(UserCLIManager.java:78)
+	at com.electricity.Controller.UserCLIManager.start(UserCLIManager.java:40)
+	at com.electricity.Controller.ElectricityBillingSystem.run(ElectricityBillingSystem.java:42)
+	at com.electricity.Rest.Main.main(Main.java:8)
+2024-02-13 15:18:23 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 15:18:26 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 15:18:33 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 15:18:33 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 15:18:33 INFO  UserCLIManager:122 - User created successfully with name: shree
+2024-02-13 15:18:38 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 15:18:42 INFO  BillingServiceImpl:33 - Bill generated successfully for user ID: shree
+2024-02-13 15:18:42 INFO  UserCLIManager:200 - Bill generated successfully for user ID: shree with amount: 273.0
+2024-02-13 15:19:06 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 15:19:21 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='0ecb2a75-ec70-45e3-b3b7-604e75653288', userId='shree', amount=273.0, paid=true}
+2024-02-13 15:19:21 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 15:19:21 INFO  UserCLIManager:185 - Bill paid successfully for user ID: shree with Bill ID: 0ecb2a75-ec70-45e3-b3b7-604e75653288 and Payment Method: UPI
+2024-02-13 15:27:01 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 15:27:04 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 15:27:10 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 15:27:10 WARN  AdminCLIManager:106 - Admin login failed for admin ID: 2
+2024-02-13 15:27:12 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 15:27:15 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 15:27:24 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 15:27:24 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 15:27:24 INFO  UserCLIManager:122 - User created successfully with name: shree
+2024-02-13 15:27:32 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 15:27:39 INFO  BillingServiceImpl:33 - Bill generated successfully for user ID: shree
+2024-02-13 15:27:39 INFO  UserCLIManager:200 - Bill generated successfully for user ID: shree with amount: 34.0
+2024-02-13 15:27:42 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 15:27:59 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='b066f8b8-9837-4f59-a3cb-cd6037cbea7f', userId='shree', amount=34.0, paid=true}
+2024-02-13 15:27:59 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 15:27:59 INFO  UserCLIManager:185 - Bill paid successfully for user ID: shree with Bill ID: b066f8b8-9837-4f59-a3cb-cd6037cbea7f and Payment Method: UPI
+2024-02-13 15:28:05 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 15:35:49 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 15:36:01 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 15:36:06 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 15:36:12 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 15:36:12 WARN  AdminCLIManager:106 - Admin login failed for admin ID: 2
+2024-02-13 15:36:13 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 15:36:15 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 15:36:22 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 15:36:22 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 15:36:22 INFO  UserCLIManager:122 - User created successfully with name: shree
+2024-02-13 15:36:28 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 15:36:37 ERROR UserCLIManager:98 - Error in handling admin choice: For input string: "fsv"
+2024-02-13 15:37:22 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 15:37:26 INFO  UserCLIManager:35 - User panel started.
+2024-02-13 15:37:34 INFO  UserServiceImpl:40 - User created successfully with ID: shree
+2024-02-13 15:37:34 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-13 15:37:34 INFO  UserCLIManager:122 - User created successfully with name: shree
+2024-02-13 15:37:39 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 15:37:46 ERROR UserCLIManager:98 - Error in handling admin choice: For input string: "2`23"
+2024-02-13 15:37:53 INFO  UserCLIManager:107 - User login successful for user ID: shree
+2024-02-13 15:37:58 INFO  BillingServiceImpl:33 - Bill generated successfully for user ID: shree
+2024-02-13 15:37:58 INFO  UserCLIManager:199 - Bill generated successfully for user ID: shree with amount: 3452.0
+2024-02-13 15:38:02 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 15:38:29 INFO  BillingServiceImpl:85 - Bill paid successfully: Bill{billId='a08ddd68-4573-44ac-a806-927e0be84bdd', userId='shree', amount=3452.0, paid=true}
+2024-02-13 15:38:29 INFO  BillingServiceImpl:113 - Bill data updated in file: billdata.txt
+2024-02-13 15:38:29 INFO  UserCLIManager:185 - Bill paid successfully for user ID: shree with Bill ID: a08ddd68-4573-44ac-a806-927e0be84bdd and Payment Method: UPI
+2024-02-13 15:38:41 INFO  UserCLIManager:173 - Displayed bill history for user ID: shree
+2024-02-13 15:38:44 INFO  UserCLIManager:132 - User logged out.
+2024-02-13 15:38:45 INFO  UserCLIManager:84 - User exited.
+2024-02-13 15:38:45 INFO  UserCLIManager:47 - User exited
+2024-02-13 16:03:03 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 16:03:06 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 16:03:13 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 16:03:52 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: 232
+2024-02-13 16:03:52 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 16:03:52 INFO  AdminCLIManager:212 - Bill added successfully for user with ID: 232
+2024-02-13 16:04:25 INFO  AdminCLIManager:158 - Admin logged out.
+2024-02-13 16:04:27 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 16:16:50 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 16:16:54 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 16:17:06 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 16:17:06 WARN  AuthenticationHandlerImpl:56 - Admin authentication failed for admin ID: user4
+2024-02-13 16:17:06 WARN  AdminCLIManager:106 - Admin login failed for admin ID: user4
+2024-02-13 16:17:16 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 16:17:45 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 16:17:45 INFO  UserServiceImpl:133 - User data appended to file: d.txt
+2024-02-13 16:17:45 INFO  AdminCLIManager:178 - User added successfully with name: shree
+2024-02-13 16:18:01 INFO  UserServiceImpl:49 - User created successfully with ID: lakshmi
+2024-02-13 16:18:01 INFO  UserServiceImpl:133 - User data appended to file: d.txt
+2024-02-13 16:18:01 INFO  AdminCLIManager:178 - User added successfully with name: lakshmi
+2024-02-13 16:18:26 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: shree
+2024-02-13 16:18:26 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 16:18:26 INFO  AdminCLIManager:212 - Bill added successfully for user with ID: shree
+2024-02-13 16:18:42 INFO  BillingServiceImpl:43 - Bill added successfully for user ID: lakshmi
+2024-02-13 16:18:42 INFO  BillingServiceImpl:54 - Bill data appended to file: billdata.txt
+2024-02-13 16:18:42 INFO  AdminCLIManager:212 - Bill added successfully for user with ID: lakshmi
+2024-02-13 16:19:05 INFO  UserServiceImpl:118 - User details updated successfully for user ID: shree
+2024-02-13 16:19:05 INFO  AdminCLIManager:277 - User details updated successfully for user ID: shree
+2024-02-13 16:20:26 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 16:20:28 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 16:20:36 INFO  AdminServiceImpl:109 - Object deserialized from file: object.txt
+2024-02-13 16:20:54 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 16:20:54 INFO  UserServiceImpl:133 - User data appended to file: d.txt
+2024-02-13 16:20:54 INFO  AdminCLIManager:178 - User added successfully with name: shree
+2024-02-13 16:21:06 INFO  UserServiceImpl:49 - User created successfully with ID: hari
+2024-02-13 16:21:06 INFO  UserServiceImpl:133 - User data appended to file: d.txt
+2024-02-13 16:21:06 INFO  AdminCLIManager:178 - User added successfully with name: hari
+2024-02-13 16:21:36 INFO  UserServiceImpl:118 - User details updated successfully for user ID: hari
+2024-02-13 16:21:36 INFO  AdminCLIManager:277 - User details updated successfully for user ID: hari
+2024-02-13 16:21:59 INFO  AdminCLIManager:158 - Admin logged out.
+2024-02-13 16:22:00 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 16:42:02 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-13 16:42:17 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-13 16:42:26 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-13 16:42:48 INFO  UserServiceImpl:49 - User created successfully with ID: shree
+2024-02-13 16:42:48 INFO  UserServiceImpl:133 - User data appended to file: d.txt
+2024-02-13 16:42:48 INFO  AdminCLIManager:178 - User added successfully with name: shree
+2024-02-13 16:43:00 INFO  UserServiceImpl:49 - User created successfully with ID: hari
+2024-02-13 16:43:00 INFO  UserServiceImpl:133 - User data appended to file: d.txt
+2024-02-13 16:43:00 INFO  AdminCLIManager:178 - User added successfully with name: hari
+2024-02-13 16:43:16 INFO  UserServiceImpl:105 - User deleted successfully with ID: shree
+2024-02-13 16:43:16 INFO  AdminCLIManager:237 - User deleted successfully with ID: shree
+2024-02-13 16:43:21 INFO  AdminCLIManager:158 - Admin logged out.
+2024-02-13 16:43:22 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-13 18:24:41 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 19:41:40 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 19:41:44 INFO  AdminCLIManager:40 - Admin panel started.
+2024-02-16 19:41:55 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 19:41:55 WARN  AdminCLIManager:106 - Admin login failed for admin ID: admin
+2024-02-16 19:41:59 ERROR AdminCLIManager:67 - Input mismatch exception: null
+2024-02-16 19:42:00 ERROR AdminCLIManager:67 - Input mismatch exception: null
+2024-02-16 19:42:07 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 19:42:07 WARN  AdminCLIManager:106 - Admin login failed for admin ID: admin
+2024-02-16 19:42:19 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 19:42:19 WARN  AdminCLIManager:106 - Admin login failed for admin ID: Admin
+2024-02-16 19:42:22 INFO  AdminCLIManager:48 - Admin panel exited.
+2024-02-16 21:38:44 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 21:38:47 INFO  AdminCLIManager:44 - Admin panel started.
+2024-02-16 21:38:53 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 21:38:53 WARN  AuthenticationHandlerImpl:56 - Admin authentication failed for admin ID: user1
+2024-02-16 21:38:53 WARN  AdminCLIManager:112 - Admin login failed for admin ID: user1
+2024-02-16 21:39:12 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 21:39:35 INFO  UserServiceImpl:49 - User created successfully with ID: krishna
+2024-02-16 21:39:35 INFO  UserServiceImpl:133 - User data appended to file: userdata.txt
+2024-02-16 21:39:35 INFO  AdminCLIManager:184 - User added successfully with name: krishna
+2024-02-16 21:40:22 INFO  AdminCLIManager:164 - Admin logged out.
+2024-02-16 21:40:23 INFO  AdminCLIManager:52 - Admin panel exited.
+2024-02-16 22:01:42 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 22:01:43 INFO  AdminCLIManager:44 - Admin panel started.
+2024-02-16 22:01:49 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 22:02:08 INFO  UserServiceImpl:49 - User created successfully with ID: sabari
+2024-02-16 22:02:08 INFO  UserServiceImpl:133 - User data appended to file: userdata.txt
+2024-02-16 22:02:08 INFO  AdminCLIManager:184 - User added successfully with name: sabari
+2024-02-16 22:02:16 INFO  AdminCLIManager:164 - Admin logged out.
+2024-02-16 22:02:21 INFO  AdminCLIManager:52 - Admin panel exited.
+2024-02-16 22:05:46 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 22:06:52 INFO  AdminCLIManager:44 - Admin panel started.
+2024-02-16 22:06:55 ERROR AdminCLIManager:73 - Input mismatch exception: null
+2024-02-16 22:07:04 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 22:07:39 INFO  UserServiceImpl:49 - User created successfully with ID: kavitha
+2024-02-16 22:07:39 INFO  UserServiceImpl:133 - User data appended to file: userdata.txt
+2024-02-16 22:07:39 INFO  AdminCLIManager:184 - User added successfully with name: kavitha
+2024-02-16 22:07:45 INFO  AdminCLIManager:164 - Admin logged out.
+2024-02-16 22:07:46 INFO  AdminCLIManager:52 - Admin panel exited.
+2024-02-16 22:31:20 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 22:32:06 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 22:32:29 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 22:33:25 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 22:33:35 INFO  AdminCLIManager:44 - Admin panel started.
+2024-02-16 22:33:41 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 22:34:11 INFO  UserServiceImpl:49 - User created successfully with ID: krishna
+2024-02-16 22:34:11 INFO  UserServiceImpl:133 - User data appended to file: userdata
+2024-02-16 22:34:11 INFO  AdminCLIManager:184 - User added successfully with name: krishna
+2024-02-16 22:35:48 INFO  AdminCLIManager:164 - Admin logged out.
+2024-02-16 22:35:49 INFO  AdminCLIManager:52 - Admin panel exited.
+2024-02-16 22:36:03 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-16 22:36:05 INFO  AdminCLIManager:44 - Admin panel started.
+2024-02-16 22:36:12 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-16 22:36:25 INFO  UserServiceImpl:49 - User created successfully with ID: sabari
+2024-02-16 22:36:25 INFO  UserServiceImpl:133 - User data appended to file: user
+2024-02-16 22:36:25 INFO  AdminCLIManager:184 - User added successfully with name: sabari
+2024-02-16 22:40:17 INFO  UserServiceImpl:49 - User created successfully with ID: sabari
+2024-02-16 22:40:17 INFO  UserServiceImpl:133 - User data appended to file: user
+2024-02-16 22:40:17 INFO  AdminCLIManager:184 - User added successfully with name: sabari
+2024-02-16 22:40:37 INFO  AdminCLIManager:164 - Admin logged out.
+2024-02-16 22:40:38 INFO  AdminCLIManager:52 - Admin panel exited.
+2024-02-17 00:41:57 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 00:42:00 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 00:42:07 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 00:42:28 INFO  UserServiceImpl:49 - User created successfully with ID: krishna
+2024-02-17 00:42:28 INFO  UserServiceImpl:133 - User data appended to file: userdata
+2024-02-17 00:42:28 INFO  AdminCLIManager:191 - User added successfully with name: krishna
+2024-02-17 00:43:41 INFO  UserServiceImpl:118 - User details updated successfully for user ID: krishna
+2024-02-17 00:43:41 INFO  AdminCLIManager:423 - User details updated successfully for user ID: krishna
+2024-02-17 00:46:17 INFO  AdminCLIManager:171 - Admin logged out.
+2024-02-17 00:46:22 INFO  AdminCLIManager:59 - Admin panel exited.
+2024-02-17 00:46:25 INFO  UserCLIManager:46 - User panel started.
+2024-02-17 00:46:46 INFO  UserServiceImpl:40 - User created successfully with ID: rohit
+2024-02-17 00:46:46 INFO  AbstractUserService:22 - User data appended to file: userdata.txt
+2024-02-17 00:46:46 INFO  UserCLIManager:158 - User created successfully with name: rohit
+2024-02-17 00:46:59 INFO  UserCLIManager:118 - User login successful for user ID: rohit
+2024-02-17 00:47:09 INFO  BillingServiceImpl:38 - Bill generated successfully for user ID: rohit
+2024-02-17 00:47:09 INFO  UserCLIManager:291 - Bill generated successfully for user ID: rohit with amount: 1000.0
+2024-02-17 00:47:14 INFO  UserCLIManager:230 - Displayed bill history for user ID: rohit
+2024-02-17 00:47:34 INFO  UserCLIManager:302 - Displayed unpaid bills for user ID: rohit
+2024-02-17 00:47:45 INFO  UserCLIManager:189 - User logged out.
+2024-02-17 00:47:46 INFO  UserCLIManager:95 - User exited.
+2024-02-17 00:47:46 INFO  UserCLIManager:58 - User exited
+2024-02-17 00:52:07 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 00:52:08 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 00:52:16 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 00:52:27 INFO  UserServiceImpl:49 - User created successfully with ID: rosan
+2024-02-17 00:52:27 INFO  UserServiceImpl:133 - User data appended to file: userdata
+2024-02-17 00:52:27 INFO  AdminCLIManager:191 - User added successfully with name: rosan
+2024-02-17 00:52:54 INFO  BillingServiceImpl:73 - Bill added successfully for user ID: rosan
+2024-02-17 00:52:54 INFO  BillingServiceImpl:109 - Bill data appended to file: billdata.txt
+2024-02-17 00:52:54 INFO  AdminCLIManager:299 - Bill added successfully for user with ID: rosan
+2024-02-17 00:54:51 INFO  AdminCLIManager:171 - Admin logged out.
+2024-02-17 00:54:56 INFO  AdminCLIManager:59 - Admin panel exited.
+2024-02-17 00:54:59 INFO  UserCLIManager:46 - User panel started.
+2024-02-17 00:55:07 INFO  UserCLIManager:118 - User login successful for user ID: rosan
+2024-02-17 00:55:13 INFO  UserCLIManager:230 - Displayed bill history for user ID: rosan
+2024-02-17 00:55:28 INFO  UserCLIManager:302 - Displayed unpaid bills for user ID: rosan
+2024-02-17 00:55:52 ERROR UserCLIManager:282 - Failed to pay bill for user ID: rosan with Bill ID: rosan
+com.electricity.Exceptions.BillingException: Bill not found
+	at com.electricity.service.BillingServiceImpl.payBill(BillingServiceImpl.java:153)
+	at com.electricity.Controller.UserCLIManager.payBill(UserCLIManager.java:254)
+	at com.electricity.Controller.UserCLIManager.handleUserMenuChoice(UserCLIManager.java:211)
+	at com.electricity.Controller.UserCLIManager.userMenu(UserCLIManager.java:186)
+	at com.electricity.Controller.UserCLIManager.userLogin(UserCLIManager.java:120)
+	at com.electricity.Controller.UserCLIManager.handleUserChoice(UserCLIManager.java:89)
+	at com.electricity.Controller.UserCLIManager.start(UserCLIManager.java:51)
+	at com.electricity.Controller.ElectricityBillingSystem.run(ElectricityBillingSystem.java:42)
+	at com.electricity.Rest.Main.main(Main.java:8)
+2024-02-17 00:56:24 INFO  BillingServiceImpl:140 - Bill paid successfully: Bill{billId='0becc8ec-4f5e-4f5a-9aeb-3d32b6c0c594', userId='rosan', amount=1000.0, paid=true}
+2024-02-17 00:56:24 INFO  BillingServiceImpl:168 - Bill data updated in file: billdata.txt
+2024-02-17 00:56:24 INFO  UserCLIManager:256 - Bill paid successfully for user ID: rosan with Bill ID: 0becc8ec-4f5e-4f5a-9aeb-3d32b6c0c594 and Payment Method: UPI
+2024-02-17 00:57:21 INFO  UserCLIManager:189 - User logged out.
+2024-02-17 00:57:23 INFO  UserCLIManager:95 - User exited.
+2024-02-17 00:57:23 INFO  UserCLIManager:58 - User exited
+2024-02-17 01:02:47 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:02:49 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:02:56 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:03:22 INFO  UserServiceImpl:49 - User created successfully with ID: vishal
+2024-02-17 01:03:22 INFO  UserServiceImpl:133 - User data appended to file: userdata
+2024-02-17 01:03:22 INFO  AdminCLIManager:191 - User added successfully with name: vishal
+2024-02-17 01:03:43 ERROR AdminCLIManager:105 - Error in handling admin choice: For input string: "vishal"
+2024-02-17 01:04:07 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:04:53 INFO  AdminCLIManager:171 - Admin logged out.
+2024-02-17 01:04:54 INFO  AdminCLIManager:59 - Admin panel exited.
+2024-02-17 01:04:55 INFO  UserCLIManager:46 - User panel started.
+2024-02-17 01:05:01 INFO  UserCLIManager:118 - User login successful for user ID: vishal
+2024-02-17 01:05:06 INFO  BillingServiceImpl:38 - Bill generated successfully for user ID: vishal
+2024-02-17 01:05:06 INFO  UserCLIManager:291 - Bill generated successfully for user ID: vishal with amount: 1500.0
+2024-02-17 01:05:48 INFO  BillingServiceImpl:140 - Bill paid successfully: Bill{billId='594f7de8-b373-4b6a-b009-d311fa371570', userId='vishal', amount=1500.0, paid=true}
+2024-02-17 01:05:48 INFO  BillingServiceImpl:168 - Bill data updated in file: billdata.txt
+2024-02-17 01:05:48 INFO  UserCLIManager:256 - Bill paid successfully for user ID: vishal with Bill ID: 594f7de8-b373-4b6a-b009-d311fa371570 and Payment Method: UPI
+2024-02-17 01:06:24 INFO  UserCLIManager:230 - Displayed bill history for user ID: vishal
+2024-02-17 01:07:02 INFO  UserCLIManager:302 - Displayed unpaid bills for user ID: vishal
+2024-02-17 01:07:35 INFO  UserCLIManager:189 - User logged out.
+2024-02-17 01:07:36 INFO  UserCLIManager:95 - User exited.
+2024-02-17 01:07:36 INFO  UserCLIManager:58 - User exited
+2024-02-17 01:10:31 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:10:32 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:10:34 ERROR AdminCLIManager:80 - Input mismatch exception: null
+2024-02-17 01:10:37 ERROR AdminCLIManager:80 - Input mismatch exception: null
+2024-02-17 01:10:51 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:11:11 ERROR AdminCLIManager:105 - Error in handling admin choice: No line found
+2024-02-17 01:11:13 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:11:15 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:11:26 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:11:26 WARN  AuthenticationHandlerImpl:56 - Admin authentication failed for admin ID: user1
+2024-02-17 01:11:26 WARN  AdminCLIManager:119 - Admin login failed for admin ID: user1
+2024-02-17 01:11:34 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:11:41 ERROR AdminCLIManager:105 - Error in handling admin choice: For input string: "vishal"
+2024-02-17 01:11:51 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:13:11 WARN  AdminCLIManager:425 - User not found with ID: rosan. Unable to update details.
+2024-02-17 01:13:33 WARN  AdminCLIManager:425 - User not found with ID: rosan. Unable to update details.
+2024-02-17 01:14:43 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:14:45 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:14:49 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:17:01 WARN  UserServiceImpl:108 - User not found with ID: rosan. Deletion failed.
+2024-02-17 01:17:01 WARN  AdminCLIManager:327 - Failed to delete user with ID: rosan. User not found.
+2024-02-17 01:17:03 ERROR AdminCLIManager:105 - Error in handling admin choice: No line found
+2024-02-17 01:18:22 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:18:24 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:18:28 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:18:41 WARN  UserServiceImpl:108 - User not found with ID: rosan. Deletion failed.
+2024-02-17 01:18:41 WARN  AdminCLIManager:327 - Failed to delete user with ID: rosan. User not found.
+2024-02-17 01:18:50 WARN  AdminCLIManager:425 - User not found with ID: rohit. Unable to update details.
+2024-02-17 01:19:03 WARN  AdminCLIManager:425 - User not found with ID: rohit. Unable to update details.
+2024-02-17 01:19:57 WARN  AdminCLIManager:425 - User not found with ID: krishna. Unable to update details.
+2024-02-17 01:21:07 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:21:08 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:21:10 ERROR AdminCLIManager:80 - Input mismatch exception: null
+2024-02-17 01:21:19 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:21:28 ERROR AdminCLIManager:105 - Error in handling admin choice: Cannot invoke "com.electricity.Model.User.getName()" because "user" is null
+2024-02-17 01:21:45 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:21:46 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:21:50 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:21:59 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:22:02 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:22:09 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:22:24 ERROR AdminCLIManager:105 - Error in handling admin choice: Cannot invoke "com.electricity.Model.User.getName()" because "user" is null
+2024-02-17 01:22:55 INFO  AdminCLIManager:59 - Admin panel exited.
+2024-02-17 01:23:14 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:23:45 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:23:47 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:24:09 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:34:59 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-17 01:35:00 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-17 01:35:06 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-17 01:35:21 INFO  UserServiceImpl:49 - User created successfully with ID: rosan
+2024-02-17 01:35:21 INFO  UserServiceImpl:133 - User data appended to file: userdata.txt
+2024-02-17 01:35:21 INFO  AdminCLIManager:191 - User added successfully with name: rosan
+2024-02-17 01:35:53 WARN  UserServiceImpl:108 - User not found with ID: sabari. Deletion failed.
+2024-02-17 01:35:53 WARN  AdminCLIManager:327 - Failed to delete user with ID: sabari. User not found.
+2024-02-17 01:36:13 INFO  BillingServiceImpl:73 - Bill added successfully for user ID: rosan
+2024-02-17 01:36:13 INFO  BillingServiceImpl:109 - Bill data appended to file: billdata.txt
+2024-02-17 01:36:13 INFO  AdminCLIManager:299 - Bill added successfully for user with ID: rosan
+2024-02-17 01:36:22 INFO  AdminCLIManager:171 - Admin logged out.
+2024-02-17 01:36:26 INFO  AdminCLIManager:59 - Admin panel exited.
+2024-02-17 01:36:30 INFO  UserCLIManager:46 - User panel started.
+2024-02-17 01:36:37 INFO  UserCLIManager:118 - User login successful for user ID: rosan
+2024-02-17 01:36:41 INFO  UserCLIManager:230 - Displayed bill history for user ID: rosan
+2024-02-17 01:36:47 INFO  UserCLIManager:316 - Displayed unpaid bills for user ID: rosan
+2024-02-17 01:37:11 INFO  BillingServiceImpl:140 - Bill paid successfully: Bill{billId='16f595ce-30f9-4193-a142-c642bdc43800', userId='rosan', amount=1000.0, paid=true}
+2024-02-17 01:37:11 INFO  BillingServiceImpl:168 - Bill data updated in file: billdata.txt
+2024-02-17 01:37:11 INFO  UserCLIManager:270 - Bill paid successfully for user ID: rosan with Bill ID: 16f595ce-30f9-4193-a142-c642bdc43800 and Payment Method: CREDIT_CARD
+2024-02-17 01:37:27 INFO  UserCLIManager:230 - Displayed bill history for user ID: rosan
+2024-02-17 01:37:31 INFO  UserCLIManager:316 - Displayed unpaid bills for user ID: rosan
+2024-02-17 01:37:35 INFO  UserCLIManager:189 - User logged out.
+2024-02-17 01:37:36 INFO  UserCLIManager:95 - User exited.
+2024-02-17 01:37:36 INFO  UserCLIManager:58 - User exited
+2024-02-18 11:36:24 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-18 11:36:27 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-18 11:36:56 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-18 11:37:13 INFO  UserServiceImpl:49 - User created successfully with ID: sabari
+2024-02-18 11:37:13 INFO  UserServiceImpl:133 - User data appended to file: user.txt
+2024-02-18 11:37:13 INFO  AdminCLIManager:191 - User added successfully with name: sabari
+2024-02-18 11:38:49 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-18 11:38:51 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-18 11:38:53 ERROR AdminCLIManager:80 - Input mismatch exception: null
+2024-02-18 11:39:00 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-18 11:39:15 INFO  UserServiceImpl:49 - User created successfully with ID: sabari
+2024-02-18 11:39:15 INFO  UserServiceImpl:133 - User data appended to file: sabari.txt
+2024-02-18 11:39:15 INFO  AdminCLIManager:191 - User added successfully with name: sabari
+2024-02-18 11:39:51 INFO  BillingServiceImpl:73 - Bill added successfully for user ID: sabari
+2024-02-18 11:39:51 INFO  BillingServiceImpl:109 - Bill data appended to file: billdata.txt
+2024-02-18 11:39:51 INFO  AdminCLIManager:299 - Bill added successfully for user with ID: sabari
+2024-02-18 11:43:02 INFO  UserServiceImpl:105 - User deleted successfully with ID: sabari
+2024-02-18 11:43:02 INFO  AdminCLIManager:324 - User deleted successfully with ID: sabari
+2024-02-18 11:43:33 INFO  UserServiceImpl:49 - User created successfully with ID: krish
+2024-02-18 11:43:33 INFO  UserServiceImpl:133 - User data appended to file: krish.txt
+2024-02-18 11:43:33 INFO  AdminCLIManager:191 - User added successfully with name: krish
+2024-02-18 11:43:56 INFO  BillingServiceImpl:73 - Bill added successfully for user ID: krish
+2024-02-18 11:43:56 INFO  BillingServiceImpl:109 - Bill data appended to file: billdata.txt
+2024-02-18 11:43:56 INFO  AdminCLIManager:299 - Bill added successfully for user with ID: krish
+2024-02-18 11:45:23 INFO  BillingServiceImpl:73 - Bill added successfully for user ID: krish
+2024-02-18 11:45:23 INFO  BillingServiceImpl:109 - Bill data appended to file: billdata.txt
+2024-02-18 11:45:23 INFO  AdminCLIManager:299 - Bill added successfully for user with ID: krish
+2024-02-18 11:46:55 INFO  AdminCLIManager:171 - Admin logged out.
+2024-02-18 11:46:58 INFO  AdminCLIManager:59 - Admin panel exited.
+2024-02-18 11:47:05 INFO  UserCLIManager:46 - User panel started.
+2024-02-18 11:47:11 INFO  UserCLIManager:118 - User login successful for user ID: krish
+2024-02-18 11:47:15 INFO  UserCLIManager:230 - Displayed bill history for user ID: krish
+2024-02-18 11:47:34 INFO  BillingServiceImpl:38 - Bill generated successfully for user ID: krish
+2024-02-18 11:47:34 INFO  UserCLIManager:305 - Bill generated successfully for user ID: krish with amount: 111.0
+2024-02-18 11:47:37 INFO  UserCLIManager:230 - Displayed bill history for user ID: krish
+2024-02-18 11:48:29 INFO  BillingServiceImpl:140 - Bill paid successfully: Bill{billId='3ac9eeca-f6d2-4c7d-b5cc-d5c5f433c3b3', userId='krish', amount=1234.0, paid=true}
+2024-02-18 11:48:29 INFO  BillingServiceImpl:168 - Bill data updated in file: billdata.txt
+2024-02-18 11:48:29 INFO  UserCLIManager:270 - Bill paid successfully for user ID: krish with Bill ID: 3ac9eeca-f6d2-4c7d-b5cc-d5c5f433c3b3 and Payment Method: UPI
+2024-02-18 11:48:52 ERROR UserCLIManager:296 - Failed to pay bill for user ID: krish with Bill ID: 7ba61a8f-e5e3-4dac-969b-4e505651da2d
+com.electricity.Exceptions.BillingException: Bill not found
+	at com.electricity.service.BillingServiceImpl.payBill(BillingServiceImpl.java:153)
+	at com.electricity.Controller.UserCLIManager.payBill(UserCLIManager.java:268)
+	at com.electricity.Controller.UserCLIManager.handleUserMenuChoice(UserCLIManager.java:211)
+	at com.electricity.Controller.UserCLIManager.userMenu(UserCLIManager.java:186)
+	at com.electricity.Controller.UserCLIManager.userLogin(UserCLIManager.java:120)
+	at com.electricity.Controller.UserCLIManager.handleUserChoice(UserCLIManager.java:89)
+	at com.electricity.Controller.UserCLIManager.start(UserCLIManager.java:51)
+	at com.electricity.Controller.ElectricityBillingSystem.run(ElectricityBillingSystem.java:42)
+	at com.electricity.Rest.Main.main(Main.java:8)
+2024-02-18 11:49:03 INFO  UserCLIManager:189 - User logged out.
+2024-02-18 11:49:08 WARN  UserCLIManager:123 - User login failed for user ID: sabari
+2024-02-18 11:49:24 INFO  UserCLIManager:95 - User exited.
+2024-02-18 11:49:24 INFO  UserCLIManager:58 - User exited
+2024-02-18 11:49:26 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-18 11:50:26 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-18 11:53:04 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-18 11:53:06 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-18 11:53:12 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-18 12:00:35 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-18 12:01:35 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-18 12:01:40 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-18 12:02:35 ERROR AdminCLIManager:105 - Error in handling admin choice: Cannot invoke "com.electricity.Model.User.getName()" because "user" is null
+2024-02-18 12:02:53 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-18 12:02:58 ERROR AdminCLIManager:105 - Error in handling admin choice: Cannot invoke "com.electricity.Model.User.getName()" because "user" is null
+2024-02-18 12:03:42 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-18 12:04:30 INFO  AdminServiceImpl:99 - Object serialized to file: object.txt
+2024-02-18 12:04:31 INFO  AdminCLIManager:51 - Admin panel started.
+2024-02-18 12:04:40 INFO  AdminServiceImpl:108 - Object deserialized from file: object.txt
+2024-02-18 12:05:01 ERROR AdminCLIManager:105 - Error in handling admin choice: Cannot invoke "com.electricity.Model.User.getName()" because "user" is null

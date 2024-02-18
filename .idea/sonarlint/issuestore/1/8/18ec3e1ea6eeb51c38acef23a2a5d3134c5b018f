@@ -1,0 +1,49 @@
+
+G	java:S106"+Replace this use of System.out by a logger.(öÙáú8¡ÀÓõÙ1
+L	java:S106"+Replace this use of System.out by a logger.(¾Å±øÿÿÿÿ8¢ÀÓõÙ1
+G	java:S106"+Replace this use of System.out by a logger.(‡¹ö8¢ÀÓõÙ1
+G	java:S106 "+Replace this use of System.out by a logger.(‡¹ö8£ÀÓõÙ1
+L	java:S106!"+Replace this use of System.out by a logger.(Æ·’àÿÿÿÿÿ8¤ÀÓõÙ1
+L	java:S106""+Replace this use of System.out by a logger.(ãÕ‘¬úÿÿÿÿ8¤ÀÓõÙ1
+L	java:S106*"+Replace this use of System.out by a logger.(Á˜¡’ıÿÿÿÿ8¦ÀÓõÙ1
+L	java:S1066"+Replace this use of System.out by a logger.(ã¢Æéøÿÿÿÿ8§ÀÓõÙ1
+\
+java:S24796":Remove the non-escaped \u200D character from this literal.(ã¢Æéøÿÿÿÿ8§ÀÓõÙ1
+L	java:S1067"+Replace this use of System.out by a logger.(Èâ´¯şÿÿÿÿ8§ÀÓõÙ1
+L	java:S1068"+Replace this use of System.out by a logger.(ª²ô£ùÿÿÿÿ8§ÀÓõÙ1
+G	java:S1069"+Replace this use of System.out by a logger.(ù÷Ç÷8¨ÀÓõÙ1
+L	java:S106:"+Replace this use of System.out by a logger.(Àè»¼ÿÿÿÿÿ8¨ÀÓõÙ1
+L	java:S106N"+Replace this use of System.out by a logger.(ó«›Æùÿÿÿÿ8ªÀÓõÙ1
+L	java:S106T"+Replace this use of System.out by a logger.(¯¥ä²ÿÿÿÿÿ8«ÀÓõÙ1
+G	java:S106V"+Replace this use of System.out by a logger.(ÿ“î8«ÀÓõÙ1
+L	java:S106Y"+Replace this use of System.out by a logger.(Ğı•ıÿÿÿÿ8¬ÀÓõÙ1
+L	java:S106^"+Replace this use of System.out by a logger.(É®¶îıÿÿÿÿ8¬ÀÓõÙ1
+G	java:S106d"+Replace this use of System.out by a logger.(Ü³È˜8­ÀÓõÙ1
+L	java:S106f"+Replace this use of System.out by a logger.(±’Ş·üÿÿÿÿ8®ÀÓõÙ1
+G	java:S106h"+Replace this use of System.out by a logger.(ÔÜÒ8®ÀÓõÙ1
+G	java:S106k"+Replace this use of System.out by a logger.(»æ¢®8¯ÀÓõÙ1
+L	java:S106u"+Replace this use of System.out by a logger.(íÂÆßıÿÿÿÿ8°ÀÓõÙ1
+G	java:S106~"+Replace this use of System.out by a logger.( ­Ñˆ8±ÀÓõÙ1
+W
+java:S2479~":Remove the non-escaped \u200D character from this literal.( ­Ñˆ8±ÀÓõÙ1
+L	java:S106"+Replace this use of System.out by a logger.(Ö¡ÌÈùÿÿÿÿ8±ÀÓõÙ1
+H	java:S106€"+Replace this use of System.out by a logger.(Úøæš8±ÀÓõÙ1
+M	java:S106"+Replace this use of System.out by a logger.(¶Çãúÿÿÿÿ8²ÀÓõÙ1
+M	java:S106‚"+Replace this use of System.out by a logger.(†—›şøÿÿÿÿ8²ÀÓõÙ1
+H	java:S106ƒ"+Replace this use of System.out by a logger.(‹†Úã8²ÀÓõÙ1
+M	java:S106„"+Replace this use of System.out by a logger.(Àè»¼ÿÿÿÿÿ8²ÀÓõÙ1
+M	java:S106˜"+Replace this use of System.out by a logger.(ó«›Æùÿÿÿÿ8´ÀÓõÙ1
+M	java:S106"+Replace this use of System.out by a logger.(™ıì©ÿÿÿÿÿ8´ÀÓõÙ1
+M	java:S106Ÿ"+Replace this use of System.out by a logger.(š½±øûÿÿÿÿ8µÀÓõÙ1
+N
+java:S1659¤"+Declare "paymentMethod" on a separate line.(ÎãÕ¨üÿÿÿÿ8·ÀÓõÙ1
+H	java:S106¦"+Replace this use of System.out by a logger.(´ƒØı8·ÀÓõÙ1
+H	java:S106«"+Replace this use of System.out by a logger.(¥ñÆ¿8ºÀÓõÙ1
+M	java:S106¯"+Replace this use of System.out by a logger.(œŒ‘şÿÿÿÿ8»ÀÓõÙ1
+M	java:S106µ"+Replace this use of System.out by a logger.(îÌâõùÿÿÿÿ8¼ÀÓõÙ1
+H	java:S106¸"+Replace this use of System.out by a logger.(Ûùù„8½ÀÓõÙ1
+M	java:S106º"+Replace this use of System.out by a logger.(¸İşıÿÿÿÿ8¿ÀÓõÙ1
+H	java:S106Á"+Replace this use of System.out by a logger.(Ù‘ò¾8ÀÀÓõÙ1
+M	java:S106Ä"+Replace this use of System.out by a logger.(¹¹¥Ôüÿÿÿÿ8ÁÀÓõÙ1
+M	java:S106É"+Replace this use of System.out by a logger.(ˆéÄüüÿÿÿÿ8ÂÀÓõÙ1
+H	java:S106Ê"+Replace this use of System.out by a logger.(ïÅŸÍ8ÅìàõÙ1

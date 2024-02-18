@@ -1,0 +1,12 @@
+
+Z
+java:S1854*"8Remove this useless assignment to local variable "name".(ƒ·Êÿøÿÿÿÿ8èÖ´õÙ1
+K
+java:S1481*")Remove this unused "name" local variable.(ƒ·Êÿøÿÿÿÿ8éÖ´õÙ1
+L	java:S106C"+Replace this use of System.out by a logger.(àŠáÑøÿÿÿÿ8îÖ´õÙ1
+W
+java:S2209G"5Change this instance-reference to a static reference.(¯ÈòÛşÿÿÿÿ8ïÖ´õÙ1
+]
+java:S2118_"@Make the "java.util.Map" class "Serializable" or don't write it.(ëÊè¹8óÖ´õÙ1
+]
+java:S2118`"@Make the "java.util.Map" class "Serializable" or don't write it.(¸¦ë8óÖ´õÙ1

@@ -1,0 +1,16 @@
+
+L	java:S106"+Replace this use of System.out by a logger.(’âçÒşÿÿÿÿ8ÓÜùÌØ1
+G	java:S106"+Replace this use of System.out by a logger.(şëı8ÓÜùÌØ1
+L	java:S106"+Replace this use of System.out by a logger.(°ãÌ®ûÿÿÿÿ8ÒÜùÌØ1
+L	java:S106"+Replace this use of System.out by a logger.(ÊÀ àüÿÿÿÿ8Í“áõÙ1
+L	java:S106"+Replace this use of System.out by a logger.(ßæ”„úÿÿÿÿ8ÓÜùÌØ1
+G	java:S106 "+Replace this use of System.out by a logger.(™¬Ç•8ÓÜùÌØ1
+L	java:S106!"+Replace this use of System.out by a logger.(Àè»¼ÿÿÿÿÿ8õ“áõÙ1
+G	java:S1060"+Replace this use of System.out by a logger.(•æÃÀ8ÕÜùÌØ1
+L	java:S1064"+Replace this use of System.out by a logger.(ÊôÍíşÿÿÿÿ8ÕÜùÌØ1
+R
+java:S1068"0Remove this unused "adminService" private field.(¡¾Ñÿÿÿÿÿ8íÌÌÙ1
+O
+java:S1068"2Remove this unused "billingService" private field.(Üèı8îÌÌÙ1
+Q
+java:S1068"/Remove this unused "userService" private field.(¶òÁÈùÿÿÿÿ8îÌÌÙ1

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jdk-20.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../jdk-20.0.2_linux-aarch64_bin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
