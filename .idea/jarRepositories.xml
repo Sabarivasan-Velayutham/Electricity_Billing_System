@@ -7,9 +7,24 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="internal-repository" />
+      <option name="name" value="Maven Repository Manager running on appviewx" />
+      <option name="url" value="http://repo.appviewx.in/repository/avxcentral" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central-repository" />
+      <option name="name" value="Maven Repository Manager running on appviewx" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="internal-repository-devops2" />
+      <option name="name" value="Maven Repository Manager running on appviewx" />
+      <option name="url" value="http://repo.appviewx.in/repository/avx_feature_group_mvn" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="jboss.community" />
