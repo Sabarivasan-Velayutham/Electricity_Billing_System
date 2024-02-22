@@ -1,8 +1,12 @@
-package com.electricity.service;
+package com.electricity.service.implMM;
 
 import com.electricity.Model.Admin;
 import com.electricity.Model.Bill;
 import com.electricity.Model.User;
+import com.electricity.service.AbstractAdminService;
+import com.electricity.service.AdminService;
+import com.electricity.service.AuthenticationHandlerImpl;
+import com.electricity.service.BeanFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +22,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class AdminServiceImpl extends  AbstractAdminService implements AdminService, Serializable {
+public class AdminServiceImplMM extends AbstractAdminService implements AdminService, Serializable {
 
     private Map<String, Admin> admins;
     private Map<String, User> users;
@@ -26,9 +30,9 @@ public class AdminServiceImpl extends  AbstractAdminService implements AdminServ
 
     private final AuthenticationHandlerImpl authenticationHandlerImpl;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AdminServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdminServiceImplMM.class);
 
-    public AdminServiceImpl() {
+    public AdminServiceImplMM() {
         this.admins = new HashMap<>();
         this.users = new HashMap<>();
         this.userBills = new HashMap<>();
@@ -62,17 +66,28 @@ public class AdminServiceImpl extends  AbstractAdminService implements AdminServ
 
     @Override
     public boolean authenticateUser(String userId, String password) {
-        AdminServiceImpl deserializedService = AdminServiceImpl.deserializeFromFile();
+        AdminServiceImplMM deserializedService = AdminServiceImplMM.deserializeFromFile();
         Admin admin = null;
+
         if (deserializedService != null) {
             admin = deserializedService.getUserById(userId);
             if (admin != null) {
                 System.out.println("Retrieved user: " + admin.getAdminId());
+            } else {
+                System.out.println("Admin with ID " + userId + " not found during deserialization.");
             }
+        } else {
+            System.out.println("Deserialization failed or returned null.");
         }
+
         if (admin != null) {
-            return authenticationHandlerImpl.authenticateAdmin(admin, userId, password);
+            boolean authenticationResult = authenticationHandlerImpl.authenticateAdmin(admin, userId, password);
+            System.out.println("Authentication result: " + authenticationResult);
+            return authenticationResult;
+        } else {
+            System.out.println("Admin object is null. Authentication failed.");
         }
+
         return false;
     }
 
@@ -85,7 +100,7 @@ public class AdminServiceImpl extends  AbstractAdminService implements AdminServ
     public void addBillForUser(String userId, double amount) {
         List<Bill> bills = userBills.getOrDefault(userId, new ArrayList<>());
         String billId = UUID.randomUUID().toString();
-        Bill bill = new Bill(billId, userId, amount);
+        Bill bill = new Bill(billId, userId, amount, false);
         bills.add(bill);
         userBills.put(userId, bills);
         LOGGER.info("Bill added successfully for user ID: {}", userId);
@@ -101,12 +116,18 @@ public class AdminServiceImpl extends  AbstractAdminService implements AdminServ
             LOGGER.error("Error serializing object to file: {}", e.getMessage());
         }
     }
-    public static AdminServiceImpl deserializeFromFile() {
+
+    public static AdminServiceImplMM deserializeFromFile() {
         String filename = "object.txt";
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
-            AdminServiceImpl adminService = (AdminServiceImpl) ois.readObject(); // Deserialize the object
-            LOGGER.info("Object deserialized from file: {}", filename);
-            return adminService;
+            Object obj = ois.readObject();
+            if (obj instanceof AdminServiceImplMM) {
+                AdminServiceImplMM adminService = (AdminServiceImplMM) obj;
+                LOGGER.info("Object deserialized from file: {}", filename);
+                return adminService;
+            } else {
+                LOGGER.error("Unexpected object type during deserialization from file '{}'", filename);
+            }
         } catch (IOException e) {
             LOGGER.error("IO error while deserializing object from file '{}': {}", filename, e.getMessage());
         } catch (ClassNotFoundException e) {
@@ -116,4 +137,6 @@ public class AdminServiceImpl extends  AbstractAdminService implements AdminServ
         }
         return null;
     }
+
+
 }

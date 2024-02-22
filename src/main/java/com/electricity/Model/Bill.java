@@ -12,7 +12,7 @@ public class Bill {
 
     private PaymentMethod paymentMethod;
 
-    public Bill(String billId, String userId, double amount) {
+    public Bill(String billId, String userId, double amount, boolean paid) {
         this.billId = billId;
         this.userId = userId;
         this.amount = amount;

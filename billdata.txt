@@ -1,0 +1,10 @@
+User ID: sabari
+Bill ID: 02757d7a-f14c-4072-b754-dae7a2eed8fb
+Bill Amount: 1212.0
+Paid: false
+---------------------------------
+User ID: krish
+Bill ID: 02c2a0e0-e235-4d6d-b6a5-33d9a423ac26
+Bill Amount: 12345.0
+Paid: true
+---------------------------------

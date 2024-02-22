@@ -5,6 +5,7 @@ import com.electricity.service.UserService;
 import com.electricity.service.BillingService;
 import com.electricity.service.BeanFactory;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ElectricityBillingSystem {
@@ -12,15 +13,24 @@ public class ElectricityBillingSystem {
     private BillingService billingService;
     private UserService userService;
     private Scanner scanner;
+    private boolean useDB;
 
-    public ElectricityBillingSystem() {
-        this.adminService = (AdminService) BeanFactory.getBean("adminService");
-        this.billingService = (BillingService) BeanFactory.getBean("billingService");
-        this.userService = (UserService) BeanFactory.getBean("userService");
+    public ElectricityBillingSystem(boolean useDB) {
+        if (useDB){
+            this.adminService = (AdminService) BeanFactory.getBean("adminServiceDB");
+            this.billingService = (BillingService) BeanFactory.getBean("billingServiceDB");
+            this.userService = (UserService) BeanFactory.getBean("userServiceDB");
+        }
+        else {
+            this.adminService = (AdminService) BeanFactory.getBean("adminServiceMM");
+            this.billingService = (BillingService) BeanFactory.getBean("billingServiceMM");
+            this.userService = (UserService) BeanFactory.getBean("userServiceMM");
+        }
         this.scanner = new Scanner(System.in);
+        this.useDB = useDB;
     }
 
-    public void run() {
+    public void run() throws SQLException {
         System.out.println("\nWelcome to the Electricity Billing System!");
 
         while (true) {
@@ -33,12 +43,12 @@ public class ElectricityBillingSystem {
 
             switch (choice) {
                 case 1:
-                    AdminCLIManager adminCLIManager = new AdminCLIManager();
+                    AdminCLIManager adminCLIManager = new AdminCLIManager(useDB);
                     adminCLIManager.start();
                     break;
                 case 2:
                 case 3:
-                    UserCLIManager userCLIManager = new UserCLIManager();
+                    UserCLIManager userCLIManager = new UserCLIManager(useDB);
                     userCLIManager.start();
                     break;
                 case 4:
@@ -80,3 +90,5 @@ public class ElectricityBillingSystem {
         }
     }
 }
+
+

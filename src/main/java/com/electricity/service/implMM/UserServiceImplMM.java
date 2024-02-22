@@ -1,34 +1,34 @@
-package com.electricity.service;
+package com.electricity.service.implMM;
 
 import com.electricity.Exceptions.UserException;
+import com.electricity.Model.Admin;
 import com.electricity.Model.Bill;
 import com.electricity.Model.User;
+import com.electricity.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileWriter;
-import java.io.BufferedWriter;
-import java.io.IOException;
+import java.io.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class UserServiceImpl extends AbstractUserService implements UserService {
+public class UserServiceImplMM extends AbstractUserService implements UserService {
     private final Map<String, User> users;
     private final BillingService billingService;
     private final AuthenticationHandlerImpl authenticationHandlerImpl;
 
     private Map<String, List<Bill>> userBills;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImplMM.class);
 
 
-    public UserServiceImpl() {
+    public UserServiceImplMM() {
         this.users = new HashMap<>();
         this.userBills = new HashMap<>();
-        this.billingService = (BillingService) BeanFactory.getBean("userService.billingService");
+        this.billingService = (BillingService) BeanFactory.getBean("userService.billingServiceMM");
         this.authenticationHandlerImpl = (AuthenticationHandlerImpl) BeanFactory.getBean("adminService.authenticationHandlerImpl");
     }
 
@@ -39,17 +39,38 @@ public class UserServiceImpl extends AbstractUserService implements UserService 
         users.put(userId, user);
         LOGGER.info("User created successfully with ID: {}", userId);
         appendUserDataToFile(user);
+//        serializeToFile();
     }
 
     @Override
-    public void createUser(String name, String address, String password,String fileLocation) {
+    public void createUser(String name, String address, String password, String fileLocation) {
         String userId = name;
         User user = new User(userId, name, address, password);
         users.put(userId, user);
         LOGGER.info("User created successfully with ID: {}", userId);
-        appendUserDataToCustomLocation(user,fileLocation);
+        appendUserDataToCustomLocation(user, fileLocation);
+//        serializeToFile();
     }
 
+    @Override
+    protected void appendUserDataToCustomLocation(User user, String fileLocation) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileLocation, true))) {
+            writer.write("User ID: " + user.getUserId() + "\n");
+            writer.write("Name: " + user.getName() + "\n");
+            writer.write("Address: " + user.getAddress() + "\n");
+            writer.write("---------------------------------\n");
+
+            LOGGER.info("User data appended to file: {}", fileLocation);
+        } catch (IOException e) {
+            LOGGER.error("Error appending user data to file: {}", e.getMessage());
+        }
+
+    }
+
+    @Override
+    protected void appendUserDataToCustomLocation(String userId, String name, String address, String fileLocation) {
+
+    }
 
     @Override
     public List<User> getAllUsers() {
@@ -66,7 +87,7 @@ public class UserServiceImpl extends AbstractUserService implements UserService 
         return users.get(userId);
     }
 
-    @Override
+        @Override
     public boolean authenticateUser(String userId, String password) {
         User user = users.get(userId);
         if (user != null) {
@@ -74,6 +95,33 @@ public class UserServiceImpl extends AbstractUserService implements UserService 
         }
         return false;
     }
+//    @Override
+//    public boolean authenticateUser(String userId, String password) {
+//        AdminServiceImplMM deserializedService = UserServiceImplMM.deserializeFromFile();
+//        Admin admin = null;
+//
+//        if (deserializedService != null) {
+//            admin = deserializedService.getUserById(userId);
+//            if (admin != null) {
+//                System.out.println("Retrieved user: " + admin.getAdminId());
+//            } else {
+//                System.out.println("Admin with ID " + userId + " not found during deserialization.");
+//            }
+//        } else {
+//            System.out.println("Deserialization failed or returned null.");
+//        }
+//
+//        if (admin != null) {
+//            boolean authenticationResult = authenticationHandlerImpl.authenticateAdmin(admin, userId, password);
+//            System.out.println("Authentication result: " + authenticationResult);
+//            return authenticationResult;
+//        } else {
+//            System.out.println("Admin object is null. Authentication failed.");
+//        }
+//
+//        return false;
+//    }
+
 
     @Override
     public void updateUserDetails(String userId, String newName, String newAddress, String newPassword) {
@@ -95,7 +143,6 @@ public class UserServiceImpl extends AbstractUserService implements UserService 
     }
 
 
-
     @Override
     public boolean deleteUser(String userId) {
         User user = users.get(userId);
@@ -109,6 +156,7 @@ public class UserServiceImpl extends AbstractUserService implements UserService 
             return false;
         }
     }
+
     public void updateUser(User user) throws UserException {
         User user1 = users.get(user.getUserId());
         if (user1 != null) {
@@ -120,21 +168,6 @@ public class UserServiceImpl extends AbstractUserService implements UserService 
             LOGGER.warn("User not found with ID: {}", user.getUserId());
             throw new UserException("User not found with ID: " + user.getUserId());
         }
-    }
-
-    @Override
-    protected void appendUserDataToCustomLocation(User user,String fileLocation) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileLocation, true))) {
-            writer.write("User ID: " + user.getUserId() + "\n");
-            writer.write("Name: " + user.getName() + "\n");
-            writer.write("Address: " + user.getAddress() + "\n");
-            writer.write("---------------------------------\n");
-
-            LOGGER.info("User data appended to file: {}",fileLocation);
-        } catch (IOException e) {
-            LOGGER.error("Error appending user data to file: {}", e.getMessage());
-        }
-
     }
 
 }

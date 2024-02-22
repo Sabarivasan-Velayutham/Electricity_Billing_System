@@ -18,6 +18,7 @@ public interface UserService {
     List<Bill> getUserBills(String userId);
     boolean authenticateUser(String userId, String password);
 
+
     void updateUserDetails(String userId, String newName, String newAddress, String newPassword);
 
     void updateUser(User user) throws UserException;

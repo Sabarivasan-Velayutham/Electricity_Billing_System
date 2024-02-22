@@ -16,7 +16,6 @@ public class User {
         this.userId = userId;
         this.name = name;
         this.address = address;
-
         this.passwordHash = hashPassword(password);
     }
 

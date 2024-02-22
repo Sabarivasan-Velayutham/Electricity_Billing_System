@@ -1,102 +1,49 @@
-package com.electricity.service;
+package com.electricity.service.implMM;
 
 import com.electricity.Model.Bill;
 import com.electricity.Exceptions.BillingException;
+import com.electricity.service.BillingService;
+import com.electricity.service.PaymentMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class BillingServiceImpl implements BillingService {
+public class BillingServiceImplMM implements BillingService {
     private Map<String, List<Bill>> userBills;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BillingServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BillingServiceImplMM.class);
 
-    public BillingServiceImpl() {
+    public BillingServiceImplMM() {
         this.userBills = new HashMap<>();
     }
-    String dbname="electricitybillsystem";
-    String user="postgres";
-    String pass="sabari";
 
     @Override
     public void generateBill(String userId, double amount) {
         String billId = UUID.randomUUID().toString();
-        Bill bill = new Bill(billId, userId, amount);
+        Bill bill = new Bill(billId, userId, amount, false);
         List<Bill> userBillList = userBills.getOrDefault(userId, new ArrayList<>());
         userBillList.add(bill);
         userBills.put(userId, userBillList);
         LOGGER.info("Bill generated successfully for user ID: {}", userId);
-        String table_name="billdata";
-        Statement statement;
-        Connection  conn=null;
-        String paid="notpaid";
-        try{
-            Class.forName("org.postgresql.Driver");
-            conn= DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+dbname,user,pass);
-            if(conn!=null){
-                System.out.println("Connection Established");
-            }
-            else{
-                System.out.println("Connection Failed");
-            }    
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-        try{
-            String query=String.format("insert into %s values('%s','%s','%.2f','%s');",table_name,userId,billId,amount,paid);
-            statement=conn.createStatement();
-            statement.executeUpdate(query);
-            System.out.println("Data Added");
-        }catch (Exception e){
-            System.out.println(e);
-        }
     }
 
     @Override
     public void addBillForUser(String userId, double amount) {
         List<Bill> bills = userBills.getOrDefault(userId, new ArrayList<>());
         String billId = UUID.randomUUID().toString();
-        Bill bill = new Bill(billId, userId, amount);
+        Bill bill = new Bill(billId, userId, amount, false);
         bills.add(bill);
         userBills.put(userId, bills);
         LOGGER.info("Bill added successfully for user ID: {}", userId);
         appendBillDataToFile(bill);
-        String table_name="billdata";
-        Statement statement;
-        Connection  conn=null;
-        String paid="notpaid";
-        try{
-            Class.forName("org.postgresql.Driver");
-            conn= DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+dbname,user,pass);
-            if(conn!=null){
-                System.out.println("Connection Established");
-            }
-            else{
-                System.out.println("Connection Failed");
-            }    
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-        try{
-            String query=String.format("insert into %s values('%s','%s','%.2f','%s');",table_name,userId,billId,amount,paid);
-            statement=conn.createStatement();
-            statement.executeUpdate(query);
-            System.out.println("Data Added");
-        }catch (Exception e){
-            System.out.println(e);
-        }
     }
 
     public void appendBillDataToFile(Bill bill) {

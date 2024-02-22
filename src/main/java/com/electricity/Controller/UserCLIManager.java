@@ -5,13 +5,16 @@ import com.electricity.service.BeanFactory;
 import com.electricity.service.BillingService;
 import com.electricity.service.PaymentMethod;
 import com.electricity.service.UserService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import java.util.Scanner;
 
 public class UserCLIManager {
@@ -19,20 +22,24 @@ public class UserCLIManager {
     private BillingService billingService;
     private Scanner scanner;
     private User user;
-    String dbname="electricitybillsystem";
-    String userdb="postgres";
-    String pass="sabari";
-    String table_name="userinfo";
-    Connection conn=null;
+    Connection conn;
     Statement statement;
-    ResultSet rs=null;
+    ResultSet rs;
+    boolean useDB;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserCLIManager.class);
 
-    public UserCLIManager() {
+    public UserCLIManager(boolean useDB) {
         // Initialize services using BeanFactory
-        this.userService = (UserService) BeanFactory.getBean("userService");
-        this.billingService = (BillingService) BeanFactory.getBean("billingService");
+        if(useDB){
+            this.userService = (UserService) BeanFactory.getBean("userServiceDB");
+            this.billingService = (BillingService) BeanFactory.getBean("billingServiceDB");
+        }
+        else{
+            this.userService = (UserService) BeanFactory.getBean("userServiceMM");
+            this.billingService = (BillingService) BeanFactory.getBean("billingServiceMM");
+        }
+        this.useDB = useDB;
         this.scanner = new Scanner(System.in);
     }
 
@@ -97,19 +104,16 @@ public class UserCLIManager {
                 default:
                     System.out.println("\n❌ Invalid choice. Please try again. ❌\n");
                     LOGGER.warn("Invalid choice selected: {}", choice);
-
             }
         } catch (java.util.InputMismatchException e) {
             System.out.println("❌ Invalid input. Please enter a valid number. ❌\n");
             LOGGER.error("Input mismatch exception: {}", e.getMessage());
             scanner.nextLine();
         } catch (Exception e) {
-            // Handle other exceptions
             System.out.println("❌ An unexpected error occurred. Please try again. ❌\n");
-            LOGGER.error("Error in handling admin choice: {}", e.getMessage());
+            LOGGER.error("Error in handling user choice: {}", e.getMessage());
         }
     }
-
     private void userLogin() {
         String userId=getValidInput("🔑 Enter User ID: ");
         String password=getValidInput("🔑 Enter Password: ");
@@ -122,30 +126,27 @@ public class UserCLIManager {
             System.out.println("\n❌ Login failed. User not found or invalid credentials. ❌\n");
             LOGGER.warn("User login failed for user ID: {}", userId);
         }
-        try{
-            Class.forName("org.postgresql.Driver");
-            conn= DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+dbname,userdb,pass);
-            if(conn!=null){
-                System.out.println("Connection Established");
+
+        if(useDB){
+            try {
+                conn = DataBaseConnectionManager.getConnection();
+                if (conn != null) {
+                    System.out.println("Connection Established");
+                } else {
+                    System.out.println("Connection Failed");
+                }
+                String tableName = DataBaseConnectionManager.getUserTableName();
+                String query=String.format("select * from %s where username= %s AND password= %s", tableName,userId,password);
+                statement=conn.createStatement();
+                rs=statement.executeQuery(query);
+                while (rs.next()) {
+                    System.out.print(rs.getString("username")+" ");
+                    System.out.print(rs.getString("password")+" ");
+                    System.out.println(rs.getString("address"));
+                }
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            else{
-                System.out.println("Connection Failed");
-            }    
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-        try {
-            String query=String.format("select * from %s where username= %s AND password= %s",table_name,userId,password);
-            statement=conn.createStatement();
-            rs=statement.executeQuery(query);
-            while (rs.next()){
-                System.out.print(rs.getString("username")+" ");
-                System.out.print(rs.getString("password")+" ");
-                System.out.println(rs.getString("address"));
-            }
-        }catch (Exception e){
-            System.out.println(e);
         }
     }
 
@@ -156,26 +157,25 @@ public class UserCLIManager {
         userService.createUser(name, address, password);
         System.out.println("User created successfully!");
         LOGGER.info("User created successfully with name: {}", name);
-        try{
-                Class.forName("org.postgresql.Driver");
-                conn= DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+dbname,userdb,pass);
-                if(conn!=null){
+
+        if (useDB) {
+            try {
+                conn = DataBaseConnectionManager.getConnection();
+                if (conn != null) {
                     System.out.println("Connection Established");
-                }
-                else{
+                } else {
                     System.out.println("Connection Failed");
-                }    
-            }
-            catch (Exception e){
+                }
+                String tableName = DataBaseConnectionManager.getUserTableName();
+                String query = String.format("INSERT INTO %s VALUES('%s','%s','%s');", tableName, name, password, address);
+                statement = conn.createStatement();
+                statement.executeUpdate(query);
+                System.out.println("Row Inserted");
+            } catch (Exception e) {
                 System.out.println(e);
-            }
-        try {
-            String query=String.format("insert into %s values('%s','%s','%s');",table_name,name,password,address);
-            statement=conn.createStatement();
-            statement.executeUpdate(query);
-            System.out.println("Row Inserted");
-        }catch (Exception e){
-            System.out.println(e);
+            } /*finally {
+            DataBaseConnectionManager.closeConnection();
+        }*/
         }
     }
 
@@ -228,67 +228,66 @@ public class UserCLIManager {
         System.out.println("\n💸 Bill History:");
         billingService.viewBillHistory(user.getUserId()).forEach(System.out::println);
         LOGGER.info("Displayed bill history for user ID: {}", user.getUserId());
-        String table_name="billdata";
-        try{
-            Class.forName("org.postgresql.Driver");
-            conn= DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+dbname,userdb,pass);
-            if(conn!=null){
-                System.out.println("Connection Established");
-            }
-            else{
-                System.out.println("Connection Failed");
-            }
 
-        }catch (Exception e){
-            System.out.println(e);
-        }
-        try {
-            String query=String.format("select * from %s where userid= %s",table_name,user.getUserId());
-            statement=conn.createStatement();
-            rs=statement.executeQuery(query);
-            while (rs.next()){
-                System.out.print(rs.getString("userid")+" ");
-                System.out.print(rs.getString("billid")+" ");
-                System.out.print(rs.getString("billamount")+" ");
-                System.out.println(rs.getString("paid"));
+        if(useDB){
+            try {
+                conn = DataBaseConnectionManager.getConnection();
+                if (conn != null) {
+                    System.out.println("Connection Established");
+                } else {
+                    System.out.println("Connection Failed");
+                }
+
+                String tableName = DataBaseConnectionManager.getBillTableName();
+                String query = String.format("SELECT userid, billid, billamount, paid FROM %s WHERE userid = ?", tableName);
+
+                try (PreparedStatement preparedStatement = conn.prepareStatement(query)) {
+                    preparedStatement.setString(1, user.getUserId());
+
+                    try (ResultSet rs = preparedStatement.executeQuery()) {
+                        while (rs.next()) {
+                            System.out.print(rs.getString("userid") + " ");
+                            System.out.print(rs.getString("billid") + " ");
+                            System.out.print(rs.getString("billamount") + " ");
+                            System.out.println(rs.getString("paid"));
+                        }
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
             }
-        }catch (Exception e){
-            System.out.println(e);
         }
     }
-
     private void payBill() {
         String  paymentMethod;
         String billId =getValidInput("Enter Bill ID to pay: ");
         System.out.print("Enter payment method (CREDIT_CARD, DEBIT_CARD, UPI): ");
         paymentMethod = scanner.nextLine().trim();
-        String table_name="billdata";
         try {
             PaymentMethod method = PaymentMethod.valueOf(paymentMethod.toUpperCase());
             billingService.payBill(user.getUserId(), billId, method); // Pass payment method
             System.out.println("\n Bill paid successfully!\n");
             LOGGER.info("Bill paid successfully for user ID: {} with Bill ID: {} and Payment Method: {}", user.getUserId(), billId, method);
-            try{
-                Class.forName("org.postgresql.Driver");
-                conn= DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+dbname,userdb,pass);
-                if(conn!=null){
-                    System.out.println("Connection Established");
+
+            if(useDB){
+                try{
+                    conn = DataBaseConnectionManager.getConnection();
+                    if (conn != null) {
+                        System.out.println("Connection Established");
+                    } else {
+                        System.out.println("Connection Failed");
+                    }
+                    String tableName = DataBaseConnectionManager.getBillTableName();
+                    String query=String.format("update %s set paid='%s' where userid='%s' AND billid='%s' ",tableName,"paid",user.getUserId(),billId);
+                    statement=conn.createStatement();
+                    statement.executeUpdate(query);
+                    System.out.println("Data Updated");
+
+                } catch (Exception e) {
+                    System.out.println(e);
                 }
-                else{
-                    System.out.println("Connection Failed");
-                }
-    
-            }catch (Exception e){
-                System.out.println(e);
             }
-            try {
-                String query=String.format("update %s set paid='%s' where userid='%s' AND billid='%s' ",table_name,"true",user.getUserId(),billId);
-                statement=conn.createStatement();
-                statement.executeUpdate(query);
-                System.out.println("Data Updated");
-            }catch (Exception e){
-                System.out.println(e);
-            }
+
         } catch (IllegalArgumentException e) {
             System.out.println("❌ Invalid payment method. Please enter a valid payment method ❌.");
         } catch (Exception e) {
@@ -314,34 +313,39 @@ public class UserCLIManager {
         System.out.println("Unpaid Bills:");
         billingService.viewUnpaidBills(user.getUserId()).forEach(System.out::println);
         LOGGER.info("Displayed unpaid bills for user ID: {}", user.getUserId());
-        String table_name="billdata";
-        try{
-            Class.forName("org.postgresql.Driver");
-            conn= DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+dbname,userdb,pass);
-            if(conn!=null){
-                System.out.println("Connection Established");
-            }
-            else{
-                System.out.println("Connection Failed");
-            }
 
-        }catch (Exception e){
-            System.out.println(e);
-        }
-        try {
-            String query=String.format("select * from %s where userid= %s AND paid='%s';",table_name,user.getUserId(),"notpaid");
-            statement=conn.createStatement();
-            rs=statement.executeQuery(query);
-            while (rs.next()){
-                System.out.print(rs.getString("userid")+" ");
-                System.out.print(rs.getString("billid")+" ");
-                System.out.print(rs.getString("billamount")+" ");
-                System.out.println(rs.getString("paid"));
+        if(useDB){
+            try {
+                conn = DataBaseConnectionManager.getConnection();
+                if (conn != null) {
+                    System.out.println("Connection Established");
+                } else {
+                    System.out.println("Connection Failed");
+                    return; // Exit method if connection fails
+                }
+
+                String tableName = DataBaseConnectionManager.getBillTableName();
+                String query = String.format("SELECT userid, billid, billamount, paid FROM %s WHERE userid = ? AND paid = ?", tableName);
+
+                try (PreparedStatement preparedStatement = conn.prepareStatement(query)) {
+                    preparedStatement.setString(1, user.getUserId());
+                    preparedStatement.setString(2, "notpaid");
+
+                    rs = preparedStatement.executeQuery();
+                    while (rs.next()) {
+                        System.out.print(rs.getString("userid") + " ");
+                        System.out.print(rs.getString("billid") + " ");
+                        System.out.print(rs.getString("billamount") + " ");
+                        System.out.println(rs.getString("paid"));
+                    }
+                }
+
+            } catch (Exception e) {
+                System.out.println(e);
             }
-        }catch (Exception e){
-            System.out.println(e);
         }
     }
+
     private String getValidInput(String message) {
         String input;
         do {

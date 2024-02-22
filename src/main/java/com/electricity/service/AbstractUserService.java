@@ -9,9 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public abstract class AbstractUserService {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(AbstractUserService.class);
-
     protected void appendUserDataToFile(User user) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("userdata.txt", true))) {
             writer.write("User ID: " + user.getUserId() + "\n");
@@ -25,7 +23,10 @@ public abstract class AbstractUserService {
         }
     }
 
-    public abstract void createUser(String name, String address, String password, String fileLocation);
+//    public abstract void createUser(String name, String address, String password, String fileLocation);
 
     protected abstract void appendUserDataToCustomLocation(User user, String fileLocation);
+    protected abstract void appendUserDataToCustomLocation(String userId, String name, String address, String fileLocation);
+
+//    protected abstract void appendUserDataToCustomLocation(String userId, String name, String address, String fileLocation);
 }
