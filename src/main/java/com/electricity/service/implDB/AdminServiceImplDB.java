@@ -74,13 +74,12 @@ public class AdminServiceImplDB extends AbstractAdminService implements AdminSer
 
     @Override
     public boolean authenticateUser(String userId, String password) {
-        String selectUserSQL = "SELECT * FROM userinfo WHERE username = ? AND password = ?";
+        String selectUserSQL = "SELECT * FROM admininfo WHERE username = ? AND password = ?";
         try (Connection connection = DataBaseConnectionManager.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(selectUserSQL)) {
 
             preparedStatement.setString(1, userId);
             preparedStatement.setString(2, password);
-//            System.out.println(preparedStatement);
 
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 if (rs.next()) {
@@ -94,7 +93,6 @@ public class AdminServiceImplDB extends AbstractAdminService implements AdminSer
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
             System.out.println("Error retrieving user from the database: " + e.getMessage());
             return false;
         }
