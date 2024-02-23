@@ -90,7 +90,7 @@ public class UserCLIManager {
 
     public void handleUserChoice(int choice) {
         try {
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     userLogin();
@@ -117,6 +117,7 @@ public class UserCLIManager {
     private void userLogin() {
         String userId=getValidInput("🔑 Enter User ID: ");
         String password=getValidInput("🔑 Enter Password: ");
+
         if (userService.authenticateUser(userId, password)) {
             System.out.println("\n Login successful! \n");
             LOGGER.info("User login successful for user ID: {}", userId);
@@ -127,36 +128,33 @@ public class UserCLIManager {
             LOGGER.warn("User login failed for user ID: {}", userId);
         }
 
-        if(useDB){
-            try {
-                conn = DataBaseConnectionManager.getConnection();
-                if (conn != null) {
-                    System.out.println("Connection Established");
-                } else {
-                    System.out.println("Connection Failed");
-                }
-                String tableName = DataBaseConnectionManager.getUserTableName();
-                String query=String.format("select * from %s where username= %s AND password= %s", tableName,userId,password);
-                statement=conn.createStatement();
-                rs=statement.executeQuery(query);
-                while (rs.next()) {
-                    System.out.print(rs.getString("username")+" ");
-                    System.out.print(rs.getString("password")+" ");
-                    System.out.println(rs.getString("address"));
-                }
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        }
+//        if(useDB){
+//            try {
+//                conn = DataBaseConnectionManager.getConnection();
+//                if (conn != null) {
+//                    System.out.println("Connection Established");
+//                } else {
+//                    System.out.println("Connection Failed");
+//                }
+//                String tableName = DataBaseConnectionManager.getUserTableName();
+//                String query=String.format("select * from %s where username= %s AND password= %s", tableName,userId,password);
+//                statement=conn.createStatement();
+//                rs=statement.executeQuery(query);
+//                while (rs.next()) {
+//                    System.out.print(rs.getString("username")+" ");
+//                    System.out.print(rs.getString("password")+" ");
+//                    System.out.println(rs.getString("address"));
+//                }
+//            } catch (Exception e) {
+//                System.out.println(e);
+//            }
+//        }
     }
 
     private void registerUser() {
         String name=getValidInput("Enter Name: ");
         String address=getValidInput("Enter Address: ");
         String password=getValidInput("Enter Password: ");
-        userService.createUser(name, address, password);
-        System.out.println("User created successfully!");
-        LOGGER.info("User created successfully with name: {}", name);
 
         if (useDB) {
             try {
@@ -173,9 +171,12 @@ public class UserCLIManager {
                 System.out.println("Row Inserted");
             } catch (Exception e) {
                 System.out.println(e);
-            } /*finally {
-            DataBaseConnectionManager.closeConnection();
-        }*/
+            }
+        }
+        else{
+            userService.createUser(name, address, password);
+            System.out.println("User created successfully!");
+            LOGGER.info("User created successfully with name: {}", name);
         }
     }
 
@@ -226,7 +227,6 @@ public class UserCLIManager {
 
     private void showBillHistory() {
         System.out.println("\n💸 Bill History:");
-        billingService.viewBillHistory(user.getUserId()).forEach(System.out::println);
         LOGGER.info("Displayed bill history for user ID: {}", user.getUserId());
 
         if(useDB){
@@ -257,16 +257,18 @@ public class UserCLIManager {
                 System.out.println(e);
             }
         }
+        else{
+            billingService.viewBillHistory(user.getUserId()).forEach(System.out::println);
+        }
     }
     private void payBill() {
         String  paymentMethod;
         String billId =getValidInput("Enter Bill ID to pay: ");
         System.out.print("Enter payment method (CREDIT_CARD, DEBIT_CARD, UPI): ");
         paymentMethod = scanner.nextLine().trim();
+
         try {
             PaymentMethod method = PaymentMethod.valueOf(paymentMethod.toUpperCase());
-            billingService.payBill(user.getUserId(), billId, method); // Pass payment method
-            System.out.println("\n Bill paid successfully!\n");
             LOGGER.info("Bill paid successfully for user ID: {} with Bill ID: {} and Payment Method: {}", user.getUserId(), billId, method);
 
             if(useDB){
@@ -286,6 +288,10 @@ public class UserCLIManager {
                 } catch (Exception e) {
                     System.out.println(e);
                 }
+            }
+            else{
+                billingService.payBill(user.getUserId(), billId, method); // Pass payment method
+                System.out.println("\n Bill paid successfully!\n");
             }
 
         } catch (IllegalArgumentException e) {

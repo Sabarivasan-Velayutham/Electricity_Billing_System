@@ -90,7 +90,7 @@ public class AdminCLIManager {
 
     private void handleAdminChoice(int choice) {
         try {
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     adminLogin();
@@ -188,13 +188,6 @@ public class AdminCLIManager {
         String address = getValidInput("Enter Address: ");
         String password = getValidInput("Enter Password: ");
         String fileName = getValidInput("Enter file name: ");
-        if (fileName == null) {
-            userService.createUser(name, address, password);
-        } else {
-            userService.createUser(name, address, password, fileName);
-            System.out.println("\n User added successfully! \n");
-            LOGGER.info("User added successfully with name: {}", name);
-        }
         if (useDB) {
             try {
                 String query = String.format("INSERT INTO %s VALUES ('%s', '%s', '%s');", DataBaseConnectionManager.getUserTableName(), name, password, address);
@@ -207,16 +200,18 @@ public class AdminCLIManager {
                 LOGGER.error("Error adding user to the database: {}", e.getMessage());
             }
         }
+        else{
+            if (fileName == null) {
+                userService.createUser(name, address, password);
+            } else {
+                userService.createUser(name, address, password, fileName);
+                System.out.println("\n User added successfully! \n");
+                LOGGER.info("User added successfully with name: {}", name);
+            }
+        }
     }
 
     private void viewAllUsers() {
-        System.out.println("\n👥 All Users:");
-        List<User> users = userService.getAllUsers();
-        if (!users.isEmpty()) {
-            users.forEach(user -> System.out.println(user.getName() + " - " + user.getAddress()));
-        } else {
-            System.out.println("❌ No users found. ❌");
-        }
         if (useDB) {
             try {
                 System.out.println("\nUser details from DB:");
@@ -235,17 +230,19 @@ public class AdminCLIManager {
                 LOGGER.error("Error fetching users from the database: {}", e.getMessage());
             }
         }
+        else{
+            System.out.println("\n👥 All Users:");
+            List<User> users = userService.getAllUsers();
+            if (!users.isEmpty()) {
+                users.forEach(user -> System.out.println(user.getName() + " - " + user.getAddress()));
+            } else {
+                System.out.println("❌ No users found. ❌");
+            }
+        }
     }
 
     private void viewUserBills() {
         String userId = getValidInput("\nEnter User ID: ");
-        List<Bill> userBills = userService.getUserBills(userId);
-        if (userBills != null && !userBills.isEmpty()) {
-            System.out.println("\n💸 User Bills:");
-            userBills.forEach(System.out::println);
-        } else {
-            System.out.println("\n❌ No bills found for the specified user ID. ❌\n");
-        }
 
         if (useDB) {
             try {
@@ -268,6 +265,15 @@ public class AdminCLIManager {
             } catch (SQLException e) {
                 System.out.println("❌ Error fetching bills from the database. Please try again. ❌\n");
                 LOGGER.error("Error fetching bills from the database: {}", e.getMessage());
+            }
+        }
+        else{
+            List<Bill> userBills = userService.getUserBills(userId);
+            if (userBills != null && !userBills.isEmpty()) {
+                System.out.println("\n💸 User Bills:");
+                userBills.forEach(System.out::println);
+            } else {
+                System.out.println("\n❌ No bills found for the specified user ID. ❌\n");
             }
         }
     }
@@ -304,13 +310,7 @@ public class AdminCLIManager {
     private void deleteUser() {
         System.out.println("\n👤 Delete User:");
         String userId = getValidInput("Enter User ID: ");
-        if (userService.deleteUser(userId)) {
-            System.out.println("\n🗑️ User deleted successfully! 🗑️\n");
-            LOGGER.info("User deleted successfully with ID: {}", userId);
-        } else {
-            System.out.println("\n❌ Failed to delete user. User not found. ❌\n");
-            LOGGER.warn("Failed to delete user with ID: {}. User not found.", userId);
-        }
+
         if (useDB) {
             try {
                 String query = String.format("DELETE FROM %s WHERE username = '%s'", DataBaseConnectionManager.getUserTableName(), userId);
@@ -321,6 +321,15 @@ public class AdminCLIManager {
             } catch (SQLException e) {
                 System.out.println("❌ Error deleting user from the database. Please try again. ❌\n");
                 LOGGER.error("Error deleting user from the database: {}", e.getMessage());
+            }
+        }
+        else{
+            if (userService.deleteUser(userId)) {
+                System.out.println("\n🗑️ User deleted successfully! 🗑️\n");
+                LOGGER.info("User deleted successfully with ID: {}", userId);
+            } else {
+                System.out.println("\n❌ Failed to delete user. User not found. ❌\n");
+                LOGGER.warn("Failed to delete user with ID: {}. User not found.", userId);
             }
         }
     }
@@ -345,7 +354,6 @@ public class AdminCLIManager {
                         user.setName(newName);
                         String queryUpdateName = String.format("UPDATE %s SET username='%s' WHERE username='%s'",
                                 DataBaseConnectionManager.getUserTableName(), newName, oldName);
-                        System.out.println(queryUpdateName);
                         statement = conn.createStatement();
                         statement.executeUpdate(queryUpdateName);
                         System.out.println("Data Updated");
@@ -408,14 +416,7 @@ public class AdminCLIManager {
 
     private void searchUserById() {
         String userId = getValidInput("\nEnter User ID: ");
-        User user = userService.getUserById(userId);
-        if (user != null) {
-            System.out.println("\n🔍 User Details:");
-            System.out.println("Name: " + user.getName());
-            System.out.println("Address: " + user.getAddress());
-        } else {
-            System.out.println("\n❌ No user found with the specified ID. ❌\n");
-        }
+
         if(useDB){
             try {
                 conn = DataBaseConnectionManager.getConnection();
@@ -436,6 +437,16 @@ public class AdminCLIManager {
             } catch (SQLException e) {
                 System.out.println("❌ Error searching user by ID in the database. Please try again. ❌\n");
                 LOGGER.error("Error searching user by ID in the database: {}", e.getMessage());
+            }
+        }
+        else{
+            User user = userService.getUserById(userId);
+            if (user != null) {
+                System.out.println("\n🔍 User Details:");
+                System.out.println("Name: " + user.getName());
+                System.out.println("Address: " + user.getAddress());
+            } else {
+                System.out.println("\n❌ No user found with the specified ID. ❌\n");
             }
         }
     }

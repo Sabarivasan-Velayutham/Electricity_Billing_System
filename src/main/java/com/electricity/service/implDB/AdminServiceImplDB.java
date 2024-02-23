@@ -102,7 +102,7 @@ public class AdminServiceImplDB extends AbstractAdminService implements AdminSer
 
     @Override
     public Admin getUserById(String userId) {
-        String query = "SELECT * FROM userinfo WHERE username = ?";
+        String query = "SELECT * FROM admininfo WHERE username = ?";
         Admin admin = null;
 
         try (Connection connection = DataBaseConnectionManager.getConnection();
@@ -118,8 +118,8 @@ public class AdminServiceImplDB extends AbstractAdminService implements AdminSer
                     // Create an Admin object using retrieved data
                     return new Admin(
                             retrievedUserId,
-                            resultSet.getString("password"),
-                            resultSet.getString("address")
+                            resultSet.getString("username"),
+                            resultSet.getString("password")
                     );
                 } else {
                     System.out.println("Admin with ID " + userId + " not found in the database.");
